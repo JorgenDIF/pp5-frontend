@@ -9,7 +9,7 @@ const NavBar = () => {
     <Navbar.Brand> <img src={logo} alt="logo" height="45" /> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ms-auto">
+      <Nav className="ms-auto text-start">
         <Nav.Link>
         <i className="fas fa-home"></i>Home
         </Nav.Link>
