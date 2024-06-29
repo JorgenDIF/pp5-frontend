@@ -6,6 +6,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
 ## Table of Contents
 - [Introduction](#introduction)
 - [Agile Methodology](#agile-methodology)
+- [API](#api)
 - [User Experience (UX)](#user-experience-ux)
   - [The Strategy](#the-strategy)
   - [The Scope](#the-scope)
@@ -32,6 +33,8 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
     - [Intalize in VS Code](#intalize-in-vs-code)
     - [Create React App](#create-react-app)
     - [Deployment](#deployment)
+- [Documentation](#documentation)
+    - [Project documentation](#project-documentation)
 - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -40,6 +43,8 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
 ## <a id="introduction">Introduction</a>
 
 ## <a id="agile-methodology">Agile Methodology</a>
+
+## <a id="api">API</a>
 
 ## <a id="user-experience-ux">User Experience (UX)</a>
 ### <a id="the-strategy">The Strategy</a>
