@@ -3,7 +3,8 @@
     border: 1px solid #dadadf;
 }
 .NavLink {
-    padding: 5px
+    padding: 5px;
+    text-decoration: none;
 }
 
 .Active i {
