@@ -23,7 +23,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
 - [Technologies Used](#technologies-used)
     - [Tools](#tools)
     - [Languages](#languages)
-    - [Frameworks and Libraries](#frameworks-and-libraries)
+    - [Frameworks & Libraries](#frameworks-and-libraries)
     - [Design](#design)
 - [Testing](#testing)
     - [Bugs](#bugs)
@@ -32,8 +32,70 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
     - [Intalize in VS Code](#intalize-in-vs-code)
     - [Create React App](#create-react-app)
     - [Deployment](#deployment)
-    - [Local Deployment](#local-deployment)
 - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
     - [Thank You](#thank-you)
+
+## <a id="introduction">Introduction</a>
+
+## <a id="agile-methodology">Agile Methodology</a>
+
+## <a id="user-experience-ux">User Experience (UX)</a>
+### <a id="the-strategy">The Strategy</a>
+
+### <a id="the-scope">The Scope</a>
+
+### <a id="the-structure">The Structure</a>
+
+### <a id="the-skeleton">The Skeleton</a>
+
+### <a id="the-surface">The Surface</a>
+
+## <a id="am-i-responsive">Am I Responsive</a>
+
+
+## <a id="project-overview">Project Overview</a>
+
+### <a id="learning-objectives">Learning Objectives</a>
+
+### <a id="assignment-requirements">Assignment Requirements</a>
+
+### <a id="self-assessment">Self-Assessment</a>
+
+## <a id="features">Features</a>
+
+### <a id="gifs">Gifs</a>
+
+### <a id="future-features">Future Features</a>
+
+## <a id="technologies-used">Technologies Used</a>
+### <a id="languages">Languages</a>
+
+### <a id="tools">Tools</a>
+
+### <a id="frameworks-and-libraries">Frameworks & Libraries</a>
+
+### <a id="design">Design</a>
+
+## <a id="testing">Testing</a>
+
+### <a id="bugs">Bugs</a>
+
+## <a id="setup-and-deployment">Setup and Deployment</a>
+### <a id="create-repository">Create Repository</a>
+
+### <a id="intalize-in-vs-code">Initialize in VS Code</a>
+
+### <a id="create-react-app">Create React App</a>
+
+### <a id="deployment">Deployment</a>
+
+## <a id="credits">Credits</a>
+
+### <a id="content">Content</a>
+
+### <a id="media">Media</a>
+
+### <a id="thank-you">Thank You</a>
+
