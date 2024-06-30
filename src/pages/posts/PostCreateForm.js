@@ -24,8 +24,10 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    mood: "happy",  // default value
+    category: "nature",  // default value
   });
-  const { title, content, image } = postData;
+  const { title, content, image, mood, category } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -47,24 +49,26 @@ function PostCreateForm() {
     }
   };
 
-const handleSubmit = async (event) => {
-  event.preventDefault()
-  const formData = new FormData();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
 
-  formData.append('title', title)
-  formData.append('content', content)
-  formData.append('image', imageInput.current.files[0])
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
+    formData.append("mood", mood);
+    formData.append("category", category);
 
-  try {
-    const {data} = await axiosReq.post('/posts/', formData);
-    history.push(`/posts/${data.id}`)
-  } catch (err) {
-    console.log(err)
-    if (err.response?.status !== 401) {
-      setErrors(err.response?.data);
+    try {
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
-}
-}
+  };
 
   const textFields = (
     <div className="text-center">
@@ -88,11 +92,61 @@ const handleSubmit = async (event) => {
           as="textarea"
           rows={6}
           name="content"
-          value={title}
+          value={content}
           onChange={handleChange}
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Mood</Form.Label>
+        <Form.Control
+          as="select"
+          name="mood"
+          value={mood}
+          onChange={handleChange}
+        >
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="excited">Excited</option>
+          <option value="relaxed">Relaxed</option>
+          <option value="stressed">Stressed</option>
+          <option value="adventurous">Adventurous</option>
+          <option value="grateful">Grateful</option>
+          <option value="lonely">Lonely</option>
+          <option value="angry">Angry</option>
+          <option value="in_love">In Love</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.mood?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group>
+        <Form.Label>Category</Form.Label>
+        <Form.Control
+          as="select"
+          name="category"
+          value={category}
+          onChange={handleChange}
+        >
+          <option value="nature">Nature</option>
+          <option value="cafe">Cafe</option>
+          <option value="home">Home</option>
+          <option value="workplace">Workplace</option>
+          <option value="park">Park</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain</option>
+          <option value="city">City</option>
+          <option value="countryside">Countryside</option>
+          <option value="water">Water</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -109,6 +163,7 @@ const handleSubmit = async (event) => {
       </Button>
     </div>
   );
+
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
