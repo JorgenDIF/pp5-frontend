@@ -19,6 +19,8 @@ const Post = (props) => {
     content,
     image,
     updated_at,
+    mood, // Added mood
+    category, // Added category
     postPage,
     setPosts,
   } = props;
@@ -28,36 +30,40 @@ const Post = (props) => {
 
   const handleLike = async () => {
     try {
-      const {data} = await axiosRes.post('/likes/', {post: id});
-      setPosts((prevPosts) =>({
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
-            return post.id === id
-            ? {...post, likes_count: post.likes_count + 1, like_id: data.id}
-            :post;
-        })
-      }))
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            : post;
+        }),
+      }));
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
-    };
+  };
 
-    const handleUnlike = async () => {
-        try {
-          await axiosRes.delete(`/likes/${like_id}/`);
-          setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-              return post.id === id
-                ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                : post;
-            }),
-          }));
-        } catch (err) {
-          console.log(err);
-        }
-      };
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
+  // Function to capitalize the first letter of mood and category
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
   return (
     <Card className={styles.Post}>
@@ -79,6 +85,8 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
+        {mood && <Card.Text><strong>Mood:</strong> {capitalizeFirstLetter(mood)}</Card.Text>}
+        {category && <Card.Text><strong>Category:</strong> {capitalizeFirstLetter(category)}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
