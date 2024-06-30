@@ -16,6 +16,7 @@ export const CurrentUserProvider = ({ children }) => {
   const handleMount = async () => {
     try {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
+      console.log("User data:", data);
       setCurrentUser(data);
     } catch (err) {
       console.log(err);
@@ -32,6 +33,8 @@ export const CurrentUserProvider = ({ children }) => {
         try {
           await axios.post("/dj-rest-auth/token/refresh/");
         } catch (err) {
+          console.error("Error fetching current user:", err);
+          console.error("Error details:", err.response ? err.response.data : "No response data");
           setCurrentUser((prevCurrentUser) => {
             if (prevCurrentUser) {
               history.push("/signin");
