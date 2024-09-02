@@ -7,6 +7,15 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
+const feelingEmojis = {
+    happy: "😊",
+    sad: "😢",
+    angry: "😡",
+    excited: "😄",
+    bored: "😒",
+    confused: "😕",
+};
+
 const Comment = (props) => {
   const {
     profile_id,
@@ -62,7 +71,7 @@ const Comment = (props) => {
             <p>{content}</p>
             {feeling && (
               <p className={styles.Feeling}>
-                <strong>Feeling: </strong>{feeling}
+                <strong>Feeling: </strong>{feelingEmojis[feeling]} {feeling}
               </p>
             )}
           </div>

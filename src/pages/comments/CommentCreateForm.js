@@ -6,10 +6,19 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
+const feelingEmojis = {
+  happy: "😊",
+  sad: "😢",
+  angry: "😠",
+  excited: "😄",
+  bored: "😒",
+  confused: "😕",
+};
+
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState("");
+  const [feeling, setFeeling] = useState(""); // Initialize as an empty string to ensure user selection
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -21,6 +30,11 @@ function CommentCreateForm(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!feeling) {
+      // Check if a feeling is selected
+      alert("Please choose a feeling before submitting!");
+      return;
+    }
     try {
       const { data } = await axiosRes.post("/comments/", {
         content,
@@ -40,7 +54,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling("");
+      setFeeling(""); // Reset feeling after submission
     } catch (err) {
       console.log(err);
     }
@@ -64,19 +78,21 @@ function CommentCreateForm(props) {
         </InputGroup>
       </Form.Group>
       <Form.Group>
-        <Form.Label>Feeling</Form.Label>
+        <Form.Label>Feeling {feeling && feelingEmojis[feeling]}</Form.Label>{" "}
+        {/* Show emoji next to label */}
         <Form.Control
           as="select"
           value={feeling}
           onChange={handleChangeFeeling}
+          required // Ensures that a feeling must be selected
         >
           <option value="">Choose a feeling...</option>
-          <option value="happy">Happy</option>
-          <option value="sad">Sad</option>
-          <option value="angry">Angry</option>
-          <option value="excited">Excited</option>
-          <option value="bored">Bored</option>
-          <option value="confused">Confused</option>
+          <option value="happy">Happy 😊</option>
+          <option value="sad">Sad 😢</option>
+          <option value="angry">Angry 😡</option>
+          <option value="excited">Excited 😄</option>
+          <option value="bored">Bored 😒</option>
+          <option value="confused">Confused 😕</option>
         </Form.Control>
       </Form.Group>
       <button
@@ -84,7 +100,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Post
       </button>
     </Form>
   );
