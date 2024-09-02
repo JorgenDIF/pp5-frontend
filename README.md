@@ -171,6 +171,8 @@ The skeleton of the Rest In Ease social media app outlines the basic structure a
 * Display the number of followers and following on the user profile page.
 </details>
 
+## The Wireframes can be found here:
+
 ### <a id="the-surface">The Surface</a>
 
 ## <a id="am-i-responsive">Am I Responsive</a>

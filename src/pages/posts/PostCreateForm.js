@@ -108,6 +108,7 @@ function PostCreateForm() {
           name="mood"
           value={mood}
           onChange={handleChange}
+          
         >
           <option value="happy">😊 Happy</option>
           <option value="sad">😢 Sad</option>
@@ -133,6 +134,7 @@ function PostCreateForm() {
           name="category"
           value={category}
           onChange={handleChange}
+          className="mb-3"
         >
           <option value="nature">Nature</option>
           <option value="cafe">Cafe</option>
