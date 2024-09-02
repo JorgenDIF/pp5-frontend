@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import CommentEditForm from "./CommentEditForm";
+
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -29,6 +31,7 @@ const Comment = (props) => {
     setComments,
   } = props;
 
+  const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
@@ -68,17 +71,35 @@ const Comment = (props) => {
               <span className={styles.Owner}>{owner}</span>
               <span className={styles.Date}>{updated_at}</span>
             </div>
-            <p>{content}</p>
-            {feeling && (
-              <p className={styles.Feeling}>
-                <strong>Feeling: </strong>{feelingEmojis[feeling]} {feeling}
-              </p>
+            {showEditForm ? (
+              <CommentEditForm
+                id={id}
+                content={content}
+                feeling={feeling}
+                setComments={setComments}
+                setShowEditForm={setShowEditForm}
+                profile_id={profile_id}
+                profileImage={profile_image}
+              />
+            ) : (
+              <>
+                <p>{content}</p>
+                {feeling && (
+                  <p className={styles.Feeling}>
+                    <strong>Feeling: </strong>
+                    {feelingEmojis[feeling]} {feeling}
+                  </p>
+                )}
+              </>
             )}
           </div>
         </Col>
-        {is_owner && (
+        {is_owner && !showEditForm && (
           <Col xs="auto" className="align-self-center">
-            <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete} />
+            <MoreDropdown
+              handleEdit={() => setShowEditForm(true)}
+              handleDelete={handleDelete}
+            />
           </Col>
         )}
       </Row>
