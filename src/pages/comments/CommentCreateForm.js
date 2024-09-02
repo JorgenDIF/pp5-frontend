@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -12,7 +9,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState(""); // New state for feeling
+  const [feeling, setFeeling] = useState("");
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -28,7 +25,7 @@ function CommentCreateForm(props) {
       const { data } = await axiosRes.post("/comments/", {
         content,
         post,
-        feeling, // Include feeling in the data sent to API
+        feeling,
       });
       setComments((prevComments) => ({
         ...prevComments,
@@ -43,7 +40,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(""); // Reset feeling after submission
+      setFeeling("");
     } catch (err) {
       console.log(err);
     }

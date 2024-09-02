@@ -1,31 +1,78 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import styles from "../../styles/Comment.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Comment = (props) => {
-  const { profile_id, profile_image, owner, updated_at, content, feeling } = props;
+  const {
+    profile_id,
+    profile_image,
+    owner,
+    updated_at,
+    content,
+    feeling,
+    id,
+    setPost,
+    setComments,
+  } = props;
+
+  const currentUser = useCurrentUser();
+  const is_owner = currentUser?.username === owner;
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/comments/${id}/`);
+      setPost((prevPost) => ({
+        results: [
+          {
+            ...prevPost.results[0],
+            comments_count: prevPost.results[0].comments_count - 1,
+          },
+        ],
+      }));
+
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.filter((comment) => comment.id !== id),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
       <hr />
-      <div className="d-flex align-items-center">
-        <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
-        </Link>
-        <div className="ml-2">
-          <div>
-            <span className={styles.Owner}>{owner}</span>
-            <span className={styles.Date}>{updated_at}</span>
+      <Row>
+        <Col xs="auto">
+          <Link to={`/profiles/${profile_id}`}>
+            <Avatar src={profile_image} />
+          </Link>
+        </Col>
+        <Col className="align-self-center">
+          <div className="d-flex flex-column">
+            <div>
+              <span className={styles.Owner}>{owner}</span>
+              <span className={styles.Date}>{updated_at}</span>
+            </div>
+            <p>{content}</p>
+            {feeling && (
+              <p className={styles.Feeling}>
+                <strong>Feeling: </strong>{feeling}
+              </p>
+            )}
           </div>
-          <p>{content}</p>
-          {feeling && (
-            <p className={styles.Feeling}>
-              <strong>Feeling:</strong> {feeling.charAt(0).toUpperCase() + feeling.slice(1)}
-            </p>
-          )}
-        </div>
-      </div>
+        </Col>
+        {is_owner && (
+          <Col xs="auto" className="align-self-center">
+            <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete} />
+          </Col>
+        )}
+      </Row>
     </div>
   );
 };
