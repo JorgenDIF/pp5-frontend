@@ -24,8 +24,8 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
-    mood: "happy",  
-    category: "nature",  
+    mood: "happy",
+    category: "nature",
   });
   const { title, content, image, mood, category } = postData;
 
@@ -109,16 +109,16 @@ function PostCreateForm() {
           value={mood}
           onChange={handleChange}
         >
-          <option value="happy">Happy</option>
-          <option value="sad">Sad</option>
-          <option value="excited">Excited</option>
-          <option value="relaxed">Relaxed</option>
-          <option value="stressed">Stressed</option>
-          <option value="adventurous">Adventurous</option>
-          <option value="grateful">Grateful</option>
-          <option value="lonely">Lonely</option>
-          <option value="angry">Angry</option>
-          <option value="in_love">In Love</option>
+          <option value="happy">😊 Happy</option>
+          <option value="sad">😢 Sad</option>
+          <option value="excited">🤩 Excited</option>
+          <option value="relaxed">😌 Relaxed</option>
+          <option value="stressed">😫 Stressed</option>
+          <option value="adventurous">🏞️ Adventurous</option>
+          <option value="grateful">🙏 Grateful</option>
+          <option value="lonely">😔 Lonely</option>
+          <option value="angry">😡 Angry</option>
+          <option value="in_love">❤️ In Love</option>
         </Form.Control>
       </Form.Group>
       {errors?.mood?.map((message, idx) => (

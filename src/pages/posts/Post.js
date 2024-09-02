@@ -30,6 +30,19 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  const moodEmojis = {
+    happy: "😊",
+    sad: "😢",
+    excited: "🤩",
+    relaxed: "😌",
+    stressed: "😫",
+    adventurous: "🏞️",
+    grateful: "🙏",
+    lonely: "😔",
+    angry: "😡",
+    in_love: "❤️",
+  };
+
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
@@ -42,7 +55,6 @@ const Post = (props) => {
       console.log(err);
     }
   };
-
 
   const handleLike = async () => {
     try {
@@ -76,7 +88,6 @@ const Post = (props) => {
     }
   };
 
-  // Function to capitalize the first letter of mood and category
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -104,7 +115,11 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {mood && <Card.Text><strong>Mood:</strong> {capitalizeFirstLetter(mood)}</Card.Text>}
+        {mood && (
+          <Card.Text>
+            <strong>Mood:</strong> {moodEmojis[mood]} {capitalizeFirstLetter(mood)}
+          </Card.Text>
+        )}
         {category && <Card.Text><strong>Category:</strong> {capitalizeFirstLetter(category)}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
