@@ -60,8 +60,8 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      <Row noGutters className="px-3 text-center">
-        <Col lg={3} className="text-lg-left">
+      <Row className="g-0 px-3 text-center">
+        <Col lg={3} className="text-lg-start">
           <Image
             className={styles.ProfileImage}
             roundedCircle
@@ -70,7 +70,7 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
-          <Row className="justify-content-center no-gutters">
+          <Row className="justify-content-center g-0">
             <Col xs={3} className="my-2">
               <div>{profile?.posts_count}</div>
               <div>posts</div>
@@ -85,7 +85,7 @@ function ProfilePage() {
             </Col>
           </Row>
         </Col>
-        <Col lg={3} className="text-lg-right">
+        <Col lg={3} className="text-lg-end">
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
