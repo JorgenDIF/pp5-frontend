@@ -61,56 +61,57 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-      <Row className="g-0 px-3 text-center">
-        <Col lg={3} className="text-lg-start">
-          <Image
-            className={styles.ProfileImage}
-            roundedCircle
-            src={profile?.image}
-          />
-        </Col>
-        <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
-          <Row className="justify-content-center g-0">
-            <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
-              <div>posts</div>
-            </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
-            </Col>
-            <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
-            </Col>
-          </Row>
-        </Col>
-        <Col lg={3} className="text-lg-end">
-          {currentUser &&
-            !is_owner &&
-            (profile?.following_id ? (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                onClick={() => handleUnfollow(profile)}
-              >
-                unfollow
-              </Button>
-            ) : (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Black}`}
-                onClick={() => handleFollow(profile)}
-              >
-                follow
-              </Button>
-            ))}
-        </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
-      </Row>
+      <div className="position-relative"> {/* Add this wrapper */}
+        {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+        <Row className="g-0 px-3 text-center">
+          <Col lg={3} className="text-lg-start">
+            <Image
+              className={styles.ProfileImage}
+              roundedCircle
+              src={profile?.image}
+            />
+          </Col>
+          <Col lg={6}>
+            <h3 className="m-2">{profile?.owner}</h3>
+            <Row className="justify-content-center g-0">
+              <Col xs={3} className="my-2">
+                <div>{profile?.posts_count}</div>
+                <div>posts</div>
+              </Col>
+              <Col xs={3} className="my-2">
+                <div>{profile?.followers_count}</div>
+                <div>followers</div>
+              </Col>
+              <Col xs={3} className="my-2">
+                <div>{profile?.following_count}</div>
+                <div>following</div>
+              </Col>
+            </Row>
+          </Col>
+          <Col lg={3} className="text-lg-end">
+            {currentUser &&
+              !is_owner &&
+              (profile?.following_id ? (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                  onClick={() => handleUnfollow(profile)}
+                >
+                  unfollow
+                </Button>
+              ) : (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.Black}`}
+                  onClick={() => handleFollow(profile)}
+                >
+                  follow
+                </Button>
+              ))}
+          </Col>
+          {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        </Row>
+      </div>
     </>
   );
-
   const mainProfilePosts = (
     <>
       <hr />
