@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
@@ -35,12 +35,16 @@ const ProfileEditForm = () => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    let isMounted = true; // Flag to track whether the component is mounted
+
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          if (isMounted) {
+            const { name, content, image } = data;
+            setProfileData({ name, content, image });
+          }
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -51,6 +55,11 @@ const ProfileEditForm = () => {
     };
 
     handleMount();
+
+    // Cleanup function
+    return () => {
+      isMounted = false; // Component unmounted, prevent state updates
+    };
   }, [currentUser, history, id]);
 
   const handleChange = (event) => {
@@ -137,7 +146,7 @@ const ProfileEditForm = () => {
                   Change the image
                 </Form.Label>
               </div>
-              {/* Updated Form.Control for Bootstrap 5 */}
+              {}
               <Form.Control
                 type="file"
                 id="image-upload"
