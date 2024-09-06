@@ -84,7 +84,7 @@ function CommentCreateForm(props) {
           as="select"
           value={feeling}
           onChange={handleChangeFeeling}
-          required // Ensures that a feeling must be selected
+          required 
         >
           <option value="">Choose a feeling...</option>
           <option value="happy">Happy 😊</option>

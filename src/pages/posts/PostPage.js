@@ -30,7 +30,7 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
-      } catch (err) {
+       } catch (err) {
         console.log(err);
       }
     };
@@ -63,11 +63,13 @@ function PostPage() {
                   {...comment}
                   setPost={setPost}
                   setComments={setComments}
+                  
                 />
               ))}
               dataLength={comments.results.length}
               loader={<Asset spinner />}
               hasMore={!!comments.next}
+              
               next={() => fetchMoreData(comments, setComments)}
             />
           ) : currentUser ? (
