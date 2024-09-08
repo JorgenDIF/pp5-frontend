@@ -54,9 +54,9 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(""); // Reset feeling after submission
+      setFeeling(""); 
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 

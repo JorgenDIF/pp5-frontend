@@ -63,7 +63,7 @@ function PostCreateForm() {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
-      console.log(err);
+     // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -109,7 +109,8 @@ function PostCreateForm() {
           value={mood}
           onChange={handleChange}
           
-        >
+        > 
+          
           <option value="happy">😊 Happy</option>
           <option value="sad">😢 Sad</option>
           <option value="excited">🤩 Excited</option>
@@ -138,7 +139,7 @@ function PostCreateForm() {
         >
           <option value="nature">Nature</option>
           <option value="cafe">Cafe</option>
-          <option value="home">Home</option>
+          <option value="home"> Home</option>
           <option value="workplace">Workplace</option>
           <option value="park">Park</option>
           <option value="beach">Beach</option>
