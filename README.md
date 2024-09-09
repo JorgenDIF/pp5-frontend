@@ -334,6 +334,8 @@ These design elements are carefully selected to create a peaceful, intuitive, an
 ### <a id="gifs">Gifs</a>
 
 ### <a id="future-features">Future Features</a>
+**Important**
+- I initially planned to update the models and handle category, mood, and feeling directly in the backend, allowing for more flexibility and proper storage in the database. Due to time constraints, I had to implement them on the frontend for now. This is a clear future feature that I will address by integrating these fields into the backend models and ensuring a more scalable solution in later iterations.
 
 ## <a id="technologies-used">Technologies Used</a>
 
