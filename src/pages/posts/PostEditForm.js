@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { moods } from "../../data/mood";
+import { categories } from "../../data/category";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -21,8 +23,8 @@ function PostEditForm() {
     title: "",
     content: "",
     image: "",
-    mood: "happy",
-    category: "nature",
+    mood: moods[0].value,  // default to the first mood
+    category: categories[0].value  // default to the first category
   });
   const { title, content, image, mood, category } = postData;
 
@@ -34,21 +36,21 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, image, is_owner } = data;
+        const { title, content, image, is_owner, mood, category } = data;
 
         if (is_owner) {
           setPostData({
             title,
             content,
             image,
-            mood: data.mood,
-            category: data.category,
+            mood,
+            category,
           });
         } else {
           history.push("/");
         }
       } catch (err) {
-       // console.log(err);
+        // console.log(err);
       }
     };
 
@@ -89,7 +91,6 @@ function PostEditForm() {
       await axiosReq.put(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
     } catch (err) {
-     // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -127,24 +128,16 @@ function PostEditForm() {
           {message}
         </Alert>
       ))}
+
+      {/* Mood Dropdown */}
       <Form.Group>
         <Form.Label>Mood</Form.Label>
-        <Form.Control
-          as="select"
-          name="mood"
-          value={mood}
-          onChange={handleChange}
-        >
-          <option value="happy">😊 Happy</option>
-          <option value="sad">😢 Sad</option>
-          <option value="excited">🤩 Excited</option>
-          <option value="relaxed">😌 Relaxed</option>
-          <option value="stressed">😫 Stressed</option>
-          <option value="adventurous">🏞️ Adventurous</option>
-          <option value="grateful">🙏 Grateful</option>
-          <option value="lonely">😔 Lonely</option>
-          <option value="angry">😡 Angry</option>
-          <option value="in_love">❤️ In Love</option>
+        <Form.Control as="select" name="mood" value={mood} onChange={handleChange}>
+          {moods.map((moodOption) => (
+            <option key={moodOption.value} value={moodOption.value}>
+              {moodOption.label}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       {errors?.mood?.map((message, idx) => (
@@ -152,24 +145,16 @@ function PostEditForm() {
           {message}
         </Alert>
       ))}
+
+      {/* Category Dropdown */}
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Control
-          as="select"
-          name="category"
-          value={category}
-          onChange={handleChange}
-        >
-          <option value="nature">Nature</option>
-          <option value="cafe">Cafe</option>
-          <option value="home">Home</option>
-          <option value="workplace">Workplace</option>
-          <option value="park">Park</option>
-          <option value="beach">Beach</option>
-          <option value="mountain">Mountain</option>
-          <option value="city">City</option>
-          <option value="countryside">Countryside</option>
-          <option value="water">Water</option>
+        <Form.Control as="select" name="category" value={category} onChange={handleChange}>
+          {categories.map((categoryOption) => (
+            <option key={categoryOption.value} value={categoryOption.value}>
+              {categoryOption.label}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       {errors?.category?.map((message, idx) => (

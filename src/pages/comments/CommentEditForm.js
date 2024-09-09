@@ -1,18 +1,10 @@
 import React, { useState } from "react";
+import { feelings } from "../../data/feeling";
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import { Link } from "react-router-dom";
-
-const feelingEmojis = {
-    happy: "😊",
-    sad: "😢",
-    angry: "😡",
-    excited: "😄",
-    bored: "😒",
-    confused: "😕",
-};
 
 function CommentEditForm(props) {
   const { id, content, feeling, setShowEditForm, setComments, profile_id, profileImage } = props;
@@ -75,12 +67,11 @@ function CommentEditForm(props) {
           value={formFeeling}
           onChange={handleFeelingChange}
         >
-          <option value="happy">Happy {feelingEmojis["happy"]}</option>
-          <option value="sad">Sad {feelingEmojis["sad"]}</option>
-          <option value="angry">Angry {feelingEmojis["angry"]}</option>
-          <option value="excited">Excited {feelingEmojis["excited"]}</option>
-          <option value="bored">Bored {feelingEmojis["bored"]}</option>
-          <option value="confused">Confused {feelingEmojis["confused"]}</option>
+          {feelings.map((feelingOption) => (
+            <option key={feelingOption.value} value={feelingOption.value}>
+              {feelingOption.label}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
       <div className="text-right">

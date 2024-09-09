@@ -1,24 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { feelings } from "../../data/feeling";  // Import feelings data
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
-const feelingEmojis = {
-  happy: "😊",
-  sad: "😢",
-  angry: "😠",
-  excited: "😄",
-  bored: "😒",
-  confused: "😕",
-};
-
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState(""); // Initialize as an empty string to ensure user selection
+  const [feeling, setFeeling] = useState(feelings[0].value);  // Default to the first feeling
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -31,7 +23,6 @@ function CommentCreateForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!feeling) {
-      // Check if a feeling is selected
       alert("Please choose a feeling before submitting!");
       return;
     }
@@ -54,7 +45,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(""); 
+      setFeeling(feelings[0].value);  // Reset to the default feeling
     } catch (err) {
       //console.log(err);
     }
@@ -77,24 +68,19 @@ function CommentCreateForm(props) {
           />
         </InputGroup>
       </Form.Group>
+
+      {/* Feeling Dropdown */}
       <Form.Group>
-        <Form.Label>Feeling {feeling && feelingEmojis[feeling]}</Form.Label>{" "}
-        {/* Show emoji next to label */}
-        <Form.Control
-          as="select"
-          value={feeling}
-          onChange={handleChangeFeeling}
-          required 
-        >
-          <option value="">Choose a feeling...</option>
-          <option value="happy">Happy 😊</option>
-          <option value="sad">Sad 😢</option>
-          <option value="angry">Angry 😡</option>
-          <option value="excited">Excited 😄</option>
-          <option value="bored">Bored 😒</option>
-          <option value="confused">Confused 😕</option>
+        <Form.Label>Feeling</Form.Label>
+        <Form.Control as="select" value={feeling} onChange={handleChangeFeeling}>
+          {feelings.map((feelingOption) => (
+            <option key={feelingOption.value} value={feelingOption.value}>
+              {feelingOption.label}
+            </option>
+          ))}
         </Form.Control>
       </Form.Group>
+
       <button
         className={`${styles.Button} btn d-block ml-auto`}
         disabled={!content.trim()}
