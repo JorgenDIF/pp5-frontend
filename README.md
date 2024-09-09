@@ -13,6 +13,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [The Structure](#the-structure)
   - [The Skeleton](#the-skeleton)
   - [The Surface](#the-surface)
+- [User Stories](#user-stories)
 - [Am I Responsive](#am-i-responsive)
 - [Project Overview](#project-overview)
   - [Learning Objectives](#learning-objectives)
@@ -56,10 +57,12 @@ The Kanban board is an essential tool for tracking progress and ensuring efficie
 - Future Features: Ideas and features planned for future implementation.
 - Won’t Have: Tasks and features that have been decided against including.
 
-Using the Kanban board helps maintain a clear overview of the project, ensuring that all tasks are accounted for and that progress is visible at a glance. This method enhances organization, prioritization, and efficiency.
+Using the Kanban board has helped me maintain a clear overview of the project, ensuring that tasks are properly tracked, prioritized, and completed efficiently. While the Kanban board focuses on higher-level planning and project progress, I have also developed detailed user stories for each specific feature of the application, documenting how different parts of the project align with user needs and goals.
 
-I find the Kanban board invaluable for staying on track and look forward to exploring and learning more about Kanban in the future!
-You can visit it here:
+This approach allows for both a broader view of the project timeline and detailed insight into how individual functionalities are built and integrated.
+
+I find this combination of Kanban and detailed user stories essential for staying organized and focused, and I look forward to further developing these skills in future projects!
+You can visit the Knaban board here:
 [Kanban](https://github.com/users/JorgenDIF/projects/7)
 
 ## <a id="api">API</a>
@@ -289,6 +292,28 @@ These design elements are carefully selected to create a peaceful, intuitive, an
 </details>
 
 ## <a id="am-i-responsive">Am I Responsive</a>
+
+## <a id="user-stories">User Stories</a>
+
+| Feature                         | User Story                                                                                                                       | Acceptance Criteria                                                                                                                                                  | Components Used                                                |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| **Navbar View on Every Page**    | As a user, I want to see a navigation bar on every page so that I can easily navigate between different sections of the site.     | 1. The navbar is consistently displayed on every page. <br> 2. The user can click links to navigate to different pages.                                               | `NavBar`, `NavLink`                                             |
+| **Sign Up for New Account**      | As a user, I want to create a new account so that I can access all the features available to registered users.                    | 1. A sign-up form is implemented. <br> 2. Users can successfully create an account and log in.                                                                       | `SignUpForm`, `axiosReq`, `Form`, `Button`                      |
+| **Sign In to Access Features**   | As a user, I want to sign in to the app so that I can access functionality for logged-in users.                                   | 1. The sign-in form is implemented. <br> 2. Users can log in with their credentials.                                                                                 | `SignInForm`, `useSetCurrentUser`, `Form`, `Button`             |
+| **Search Posts by Keywords**     | As a user, I want to search for posts using keywords so that I can find specific posts based on titles, content, or categories.   | 1. A search bar is implemented. <br> 2. Posts are searchable by title, content, and category. <br> 3. The search results are updated in real-time based on input.     | `PostsPage`, `axiosReq`, `Form`, `Input`, `SearchBar`           |
+| **Create New Posts**             | As a logged-in user, I want to create new posts with images and descriptions so that I can share my content with other users.     | 1. A form for creating new posts is available. <br> 2. Users can add a title, content, image, and select mood and category.                                           | `PostCreateForm`, `axiosReq`, `Form`, `Button`, `Image`         |
+| **Edit My Post Details**         | As a post owner, I want to edit my post's title, description, mood, and category so that I can update my content after creation.  | 1. A dropdown menu (MoreDropdown) is available on the post page. <br> 2. Users can click the dropdown and select "Edit" to modify the post. <br> 3. Changes saved.   | `MoreDropdown`, `PostEditForm`, `axiosReq`                      |
+| **Delete My Post**               | As a post owner, I want to delete my post so that I can remove it from the application.                                           | 1. A dropdown menu (MoreDropdown) is available on the post page. <br> 2. Users can click the dropdown and select "Delete" to remove the post. <br> 3. Post deleted.   | `MoreDropdown`, `axiosReq`, `PostDelete`                        |
+| **View Post Details**            | As a user, I want to view the details of individual posts so that I can see the full content and any associated comments.         | 1. Post details are displayed, including title, image, and content. <br> 2. Users can see the mood and category associated with the post.                             | `Post`, `axiosReq`, `Image`, `Mood`, `Category`                 |
+| **Like a Post**                  | As a logged-in user, I want to like a post so that I can show appreciation for its content.                                       | 1. A "like" button is available for each post. <br> 2. The like count updates when the user clicks the button.                                                       | `LikeButton`, `axiosReq`                                        |
+| **Add Comments to Posts**        | As a logged-in user, I want to add comments to a post so that I can share my thoughts about the post.                             | 1. Users can add comments to posts using a comment form. <br> 2. Comments are saved and displayed in real-time. <br> 3. Users can add a "feeling" (mood) to comments. | `CommentCreateForm`, `axiosReq`, `Form`, `Button`               |
+| **Edit My Comments**             | As a comment owner, I want to edit my comments so that I can update my content after it has been posted.                         | 1. A dropdown menu (MoreDropdown) is available on the comment. <br> 2. Users can click the dropdown and select "Edit" to modify the comment. <br> 3. Changes saved.   | `MoreDropdown`, `CommentEditForm`, `axiosReq`                   |
+| **Delete My Comments**           | As a comment owner, I want to delete my comments so that I can remove them from the application.                                  | 1. A dropdown menu (MoreDropdown) is available on the comment. <br> 2. Users can click the dropdown and select "Delete" to remove the comment. <br> 3. Comment deleted. | `MoreDropdown`, `axiosReq`, `CommentDelete`                     |
+| **Edit My Profile**              | As a logged-in user, I want to edit my profile so that I can update my name, bio, and profile picture.                            | 1. A profile edit form is available. <br> 2. Users can update their profile information and image.                                                                   | `ProfileEditForm`, `axiosReq`, `Form`, `Button`                 |
+| **View User Profiles**           | As a user, I want to view the profile of other users so that I can see their posts and learn more about them.                    | 1. Profile page shows the user’s details, posts, and statistics. <br> 2. User stats include followers, following, and post counts.                                   | `ProfilePage`, `Profile`, `axiosReq`                            |
+| **Infinite Scroll**              | As a user, I want to continuously scroll through the list of posts without needing to load new pages so that browsing is smooth.  | 1. New posts are loaded automatically as the user scrolls. <br> 2. The scroll continues until all posts are loaded.                                                  | `InfiniteScroll`, `Post`, `axiosReq`                            |
+| **Landing Page (PostsPage)**     | As a user, I want to land on a page where I can see the most recent posts and have the ability to search and browse posts.        | 1. The landing page shows all the most recent posts. <br> 2. Users can search for posts using keywords. <br> 3. The page supports infinite scrolling for posts.      | `PostsPage`, `Post`, `SearchBar`, `InfiniteScroll`, `axiosReq`  |
+
 
 ## <a id="project-overview">Project Overview</a>
 
