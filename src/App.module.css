@@ -1,6 +1,6 @@
 .App {
   font-family: "DM Sans", sans-serif;
-  background-color: #f8f8f8;
+  background-color: var(--main-pink);
   min-height: 100vh;
 }
 
@@ -9,10 +9,10 @@
 }
 
 .Content {
-  background-color: #ffffff;
+  background-color: var( --light-gray);
   padding: 10px;
   border-radius: 2px;
-  border: 1px solid #dadadf;
+  border: var(--small-box-shadow);
 }
 
 .FillerImage {
@@ -32,7 +32,7 @@
 }
 
 a {
-  color: #555555;
+  color: var(--main-black);
   transition: color ease-in-out 0.3s;
 }
 
@@ -41,7 +41,7 @@ a:hover {
 }
 
 a:hover i {
-  color: #2142b2;
+  color: var(--main-blue);
   transition: color ease-in-out 0.3s;
 }
 
@@ -50,7 +50,7 @@ input[type="file"] {
 }
 
 i {
-  color: #cfced3;
+  color: var(--main-blue);
   font-size: 1.6rem;
   padding: 7px;
   vertical-align: middle;
@@ -59,7 +59,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #2142b2;
+  color: var(--main-blue);
 }
 
 figure {
