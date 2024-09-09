@@ -41,7 +41,7 @@ a:hover {
 }
 
 a:hover i {
-  color: var(--main-blue);
+  color: var(--secondary-blue);
   transition: color ease-in-out 0.3s;
 }
 
@@ -59,7 +59,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: var(--main-blue);
+  color: var(--secondary-blue);
 }
 
 figure {
