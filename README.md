@@ -294,6 +294,8 @@ These design elements are carefully selected to create a peaceful, intuitive, an
 ## <a id="am-i-responsive">Am I Responsive</a>
 
 ## <a id="user-stories">User Stories</a>
+<details>
+<summary>User Stories</summary>
 
 | Feature                         | User Story                                                                                                                       | Acceptance Criteria                                                                                                                                                  | Components Used                                                |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
@@ -312,8 +314,12 @@ These design elements are carefully selected to create a peaceful, intuitive, an
 | **Edit My Profile**              | As a logged-in user, I want to edit my profile so that I can update my name, bio, and profile picture.                            | 1. A profile edit form is available. <br> 2. Users can update their profile information and image.                                                                   | `ProfileEditForm`, `axiosReq`, `Form`, `Button`                 |
 | **View User Profiles**           | As a user, I want to view the profile of other users so that I can see their posts and learn more about them.                    | 1. Profile page shows the user’s details, posts, and statistics. <br> 2. User stats include followers, following, and post counts.                                   | `ProfilePage`, `Profile`, `axiosReq`                            |
 | **Infinite Scroll**              | As a user, I want to continuously scroll through the list of posts without needing to load new pages so that browsing is smooth.  | 1. New posts are loaded automatically as the user scrolls. <br> 2. The scroll continues until all posts are loaded.                                                  | `InfiniteScroll`, `Post`, `axiosReq`                            |
-| **Landing Page (PostsPage)**     | As a user, I want to land on a page where I can see the most recent posts and have the ability to search and browse posts.        | 1. The landing page shows all the most recent posts. <br> 2. Users can search for posts using keywords. <br> 3. The page supports infinite scrolling for posts.      | `PostsPage`, `Post`, `SearchBar`, `InfiniteScroll`, `axiosReq`  |
+| **Landing Page (PostsPage)**     | As a user, I want to land on a page where I can see the most recent posts and have the ability to search and browse posts.        | 1. The landing page shows all the most recent posts. <br> 2. Users can search for posts using keywords. <br> 3. The page supports infinite scrolling for posts.      | `PostsPage`, `Post`, `SearchBar`, `InfiniteScroll`, `axiosReq`
+| **Follow/Unfollow Users**       | As a logged-in user, I want to follow or unfollow other users so that I can see or stop seeing their posts in my feed.                                      | 1. A "Follow" button appears on profiles I don’t follow. <br> 2. A "Unfollow" button appears on profiles I already follow. <br> 3. Followers count updates.   | `Button`, `Profile`, `axiosReq`, `useSetProfileData` |
+| **View Most-Followed Users**    | As a user, I want to see the most-followed users so that I can discover popular profiles to follow.                                                        | 1. A list of the most-followed users is visible. <br> 2. The list is ordered by the number of followers.                                                     | `PopularProfiles`, `Profile`, `axiosReq`      |
+ **Like Posts (Except Own)**     | As a logged-in user, I want to like posts so that I can show appreciation for others’ content, but not be able to like my own posts.                       | 1. A “like” button is visible on posts that aren’t mine. <br> 2. Users can like and unlike posts, but not their own. <br> 3. Like count updates in real-time. | `Post`, `axiosReq`, `OverlayTrigger`, `Tooltip` 
 
+</details>
 
 ## <a id="project-overview">Project Overview</a>
 
