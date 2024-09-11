@@ -10,14 +10,7 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
-const feelingEmojis = {
-    happy: "😊",
-    sad: "😢",
-    angry: "😡",
-    excited: "😄",
-    bored: "😒",
-    confused: "😕",
-};
+import { feelings } from "../../data/feeling"; 
 
 const Comment = (props) => {
   const {
@@ -32,7 +25,6 @@ const Comment = (props) => {
     setComments,
   } = props;
 
-  
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
@@ -56,6 +48,11 @@ const Comment = (props) => {
     } catch (err) {
       //console.log(err);
     }
+  };
+
+  const getFeelingLabel = (feeling) => {
+    const foundFeeling = feelings.find((item) => item.value === feeling);
+    return foundFeeling ? foundFeeling.label : feeling;
   };
 
   return (
@@ -89,7 +86,7 @@ const Comment = (props) => {
                 {feeling && (
                   <p className={styles.Feeling}>
                     <strong>Feeling: </strong>
-                    {feelingEmojis[feeling]} {feeling}
+                    {getFeelingLabel(feeling)}
                   </p>
                 )}
               </>

@@ -8,6 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import { moods } from "../../data/mood"; 
 
 const Post = (props) => {
   const {
@@ -31,19 +32,6 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-
-  const moodEmojis = {
-    happy: "😊",
-    sad: "😢",
-    excited: "🤩",
-    relaxed: "😌",
-    stressed: "😫",
-    adventurous: "🏞️",
-    grateful: "🙏",
-    lonely: "😔",
-    angry: "😡",
-    in_love: "❤️",
-  };
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
@@ -94,6 +82,9 @@ const Post = (props) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+
+  const moodObject = moods.find((m) => m.value === mood);
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -117,9 +108,9 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="fw-bold text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {mood && (
+        {moodObject && (
           <Card.Text>
-            <strong>Mood:</strong> {moodEmojis[mood]} {capitalizeFirstLetter(mood)}
+            <strong>Mood:</strong> {moodObject.label}
           </Card.Text>
         )}
         {category && <Card.Text><strong>Category:</strong> {capitalizeFirstLetter(category)}</Card.Text>}
