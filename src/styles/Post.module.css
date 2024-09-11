@@ -1,10 +1,15 @@
 .Post {
     background-color: #ffffff;
-    box-shadow: var(--small-box-shadow);
+    box-shadow: var(--small-box-shadow)!important;
     border-radius: 2px;
     margin-bottom: 16px;
     text-align: center;
     padding: 0 2rem;
+    border: var(--border);
+  }
+
+  .Post_Post__MK9yw.card {
+    box-shadow: var(--small-box-shadow)!important;
   }
 
   .Post figure,

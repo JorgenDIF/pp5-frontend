@@ -139,9 +139,9 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/posts/${id}`}>
-            <i className="far fa-comments" />
-          </Link>
+          <Link to={`/posts/${id}`} aria-label="View Comments">
+  <i className="far fa-comments" />
+</Link>
           {comments_count}
         </div>
       </Card.Body>

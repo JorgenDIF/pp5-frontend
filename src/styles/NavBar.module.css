@@ -1,6 +1,6 @@
 .NavBar {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
+    background-color: var(--main-white);
+    border: var(--small-box-shadow);
 }
 .NavLink {
     padding: 5px;
