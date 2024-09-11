@@ -12,7 +12,8 @@
   background-color: var( --light-gray);
   padding: 10px;
   border-radius: 2px;
-  border: var(--small-box-shadow);
+  border: var(--border);
+  box-shadow: var(--small-box-shadow);
 }
 
 .FillerImage {

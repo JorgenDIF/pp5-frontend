@@ -8,9 +8,7 @@
     border: var(--border);
   }
 
-  .Post_Post__MK9yw.card {
-    box-shadow: var(--small-box-shadow)!important;
-  }
+
 
   .Post figure,
   h5 {
