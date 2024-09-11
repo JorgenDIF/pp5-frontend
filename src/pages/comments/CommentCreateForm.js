@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { feelings } from "../../data/feeling";  // Import feelings data
+import { feelings } from "../../data/feeling"; 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
@@ -10,7 +10,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState(feelings[0].value);  // Default to the first feeling
+  const [feeling, setFeeling] = useState(feelings[0].value);  
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -45,7 +45,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(feelings[0].value);  // Reset to the default feeling
+      setFeeling(feelings[0].value);  
     } catch (err) {
       //console.log(err);
     }
