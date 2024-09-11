@@ -10,7 +10,8 @@ import { axiosRes } from "../../api/axiosDefaults";
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState(feelings[0].value);  
+  const [feeling, setFeeling] = useState(""); // Default empty option for feeling
+  const [feelingError, setFeelingError] = useState(""); // Error state for feeling
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -18,14 +19,18 @@ function CommentCreateForm(props) {
 
   const handleChangeFeeling = (event) => {
     setFeeling(event.target.value);
+    setFeelingError(""); // Clear error when the user interacts with the field
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Validate if a feeling has been chosen
     if (!feeling) {
-      alert("Please choose a feeling before submitting!");
+      setFeelingError("Please choose a feeling before submitting!");
       return;
     }
+
     try {
       const { data } = await axiosRes.post("/comments/", {
         content,
@@ -45,9 +50,9 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(feelings[0].value);  
+      setFeeling(""); // Reset the feeling field to empty after submit
     } catch (err) {
-      //console.log(err);
+      // console.log(err);
     }
   };
 
@@ -72,13 +77,20 @@ function CommentCreateForm(props) {
       {/* Feeling Dropdown */}
       <Form.Group>
         <Form.Label>Feeling</Form.Label>
-        <Form.Control as="select" value={feeling} onChange={handleChangeFeeling}>
+        <Form.Control
+          as="select"
+          value={feeling}
+          onChange={handleChangeFeeling}
+          isInvalid={!!feelingError} // Mark as invalid if error exists
+        >
+          <option value="">--Select Feeling--</option> {/* Empty option */}
           {feelings.map((feelingOption) => (
             <option key={feelingOption.value} value={feelingOption.value}>
               {feelingOption.label}
             </option>
           ))}
         </Form.Control>
+        {feelingError && <div className="text-danger mt-1">{feelingError}</div>} {/* Error message */}
       </Form.Group>
 
       <button

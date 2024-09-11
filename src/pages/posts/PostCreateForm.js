@@ -20,13 +20,15 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
+  const [moodError, setMoodError] = useState(""); // Added error state for mood
+  const [categoryError, setCategoryError] = useState(""); // Added error state for category
 
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
-    mood: moods[0].value,  
-    category: categories[0].value  
+    mood: "",  // Set default as empty string
+    category: ""  // Set default as empty string
   });
   const { title, content, image, mood, category } = postData;
 
@@ -38,6 +40,8 @@ function PostCreateForm() {
       ...postData,
       [event.target.name]: event.target.value,
     });
+    setMoodError(""); // Clear mood error when the user interacts with the mood field
+    setCategoryError(""); // Clear category error when the user interacts with the category field
   };
 
   const handleChangeImage = (event) => {
@@ -52,8 +56,18 @@ function PostCreateForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
 
+    if (!mood) {
+      setMoodError("Please choose a mood before submitting!");
+      return;
+    }
+
+    if (!category) {
+      setCategoryError("Please choose a category before submitting!");
+      return;
+    }
+
+    const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
@@ -105,36 +119,42 @@ function PostCreateForm() {
       {/* Mood Dropdown */}
       <Form.Group>
         <Form.Label>Mood</Form.Label>
-        <Form.Control as="select" name="mood" value={mood} onChange={handleChange}>
+        <Form.Control
+          as="select"
+          name="mood"
+          value={mood}
+          onChange={handleChange}
+          isInvalid={!!moodError}
+        >
+          <option value="">--Choose Mood--</option> {/* Default empty option */}
           {moods.map((moodOption) => (
             <option key={moodOption.value} value={moodOption.value}>
               {moodOption.label}
             </option>
           ))}
         </Form.Control>
+        {moodError && <div className="text-danger mt-1">{moodError}</div>}
       </Form.Group>
-      {errors?.mood?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       {/* Category Dropdown */}
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Control as="select" name="category" value={category} onChange={handleChange}>
+        <Form.Control
+          as="select"
+          name="category"
+          value={category}
+          onChange={handleChange}
+          isInvalid={!!categoryError}
+        >
+          <option value="">--Choose Category--</option> {/* Default empty option */}
           {categories.map((categoryOption) => (
             <option key={categoryOption.value} value={categoryOption.value}>
               {categoryOption.label}
             </option>
           ))}
         </Form.Control>
+        {categoryError && <div className="text-danger mt-1">{categoryError}</div>}
       </Form.Group>
-      {errors?.category?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={() => history.goBack()}>
         cancel
