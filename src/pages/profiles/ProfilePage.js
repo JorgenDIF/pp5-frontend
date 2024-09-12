@@ -53,7 +53,7 @@ function ProfilePage() {
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
-       // console.log(err);
+        // console.log(err);
       }
     };
     fetchData();
@@ -61,7 +61,9 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      <div className="position-relative"> {/* Add this wrapper */}
+      <div className="position-relative">
+        {" "}
+        {/* Add this wrapper */}
         {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
         <Row className="g-0 px-3 text-center">
           <Col lg={3} className="text-lg-start">
@@ -115,18 +117,19 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <p className="text-center">{profile?.owner}&apos;s posts</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
           dataLength={profilePosts.results.length}
           loader={<Asset spinner />}
           hasMore={!!profilePosts.next}
           next={() => fetchMoreData(profilePosts, setProfilePosts)}
-        />
+        >
+          {profilePosts.results.map((post) => (
+            <Post key={post.id} {...post} setPosts={setProfilePosts} />
+          ))}
+        </InfiniteScroll>
       ) : (
         <Asset
           src={NoResults}

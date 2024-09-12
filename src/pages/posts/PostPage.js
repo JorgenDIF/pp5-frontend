@@ -30,8 +30,8 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
-       } catch (err) {
-       // console.log(err);
+      } catch (err) {
+        // console.log(err);
       }
     };
 
@@ -41,7 +41,7 @@ function PostPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-      <PopularProfiles mobile />
+        <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
@@ -57,21 +57,20 @@ function PostPage() {
           ) : null}
           {comments.results.length ? (
             <InfiniteScroll
-              children={comments.results.map((comment) => (
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            >
+              {comments.results.map((comment) => (
                 <Comment
                   key={comment.id}
                   {...comment}
                   setPost={setPost}
                   setComments={setComments}
-                  
                 />
               ))}
-              dataLength={comments.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!comments.next}
-              
-              next={() => fetchMoreData(comments, setComments)}
-            />
+            </InfiniteScroll>
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (
@@ -80,7 +79,7 @@ function PostPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-      <PopularProfiles />
+        <PopularProfiles />
       </Col>
     </Row>
   );
