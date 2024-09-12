@@ -61,4 +61,5 @@
   .Bright {
     background-color: var(--main-blue);
     color: var(--main-white);
+    font-weight: bold;
   }
