@@ -20,15 +20,15 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
-  const [moodError, setMoodError] = useState(""); // Added error state for mood
-  const [categoryError, setCategoryError] = useState(""); // Added error state for category
+  const [moodError, setMoodError] = useState(""); 
+  const [categoryError, setCategoryError] = useState(""); 
 
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
-    mood: "",  // Set default as empty string
-    category: ""  // Set default as empty string
+    mood: "",  
+    category: ""  
   });
   const { title, content, image, mood, category } = postData;
 
@@ -40,8 +40,8 @@ function PostCreateForm() {
       ...postData,
       [event.target.name]: event.target.value,
     });
-    setMoodError(""); // Clear mood error when the user interacts with the mood field
-    setCategoryError(""); // Clear category error when the user interacts with the category field
+    setMoodError(""); 
+    setCategoryError(""); 
   };
 
   const handleChangeImage = (event) => {
