@@ -110,7 +110,7 @@ The scope of the Rest In Ease social media app includes:
 5. User Interaction:
 
 - Implement features for users to follow other users.
-- Enable notifications for new posts, comments, likes, and interactions.
+
 
 6. Search and Explore:
 
@@ -260,14 +260,22 @@ The visual design of the Rest In Ease application is aimed at creating a calming
 
 **Typography**
 
-- Primary Typeface: A clean sans-serif font is used for all headings, navigation menus, and buttons to ensure clarity and accessibility across different devices.
-- Secondary Typeface: A softer serif font is applied to body text for a warm and welcoming touch, enhancing the emotional tone of the app.
+The design of the Rest In Ease app uses a clean, modern aesthetic with soft, soothing colors to create a calming user experience. The primary typefaces are Lato for body text, providing clarity and readability, and Roboto for headings, offering a modern and bold contrast.
 
 **Color Scheme**
 
-- Primary Colors: Soothing tones such as soft blues and muted greens to evoke a sense of calm and serenity.
-- Secondary Colors: Light grays and off-white shades are used to balance the interface, providing clarity without overwhelming the user.
-- Accent Colors: Gentle pastels like light pink or lavender for action buttons and interactive elements, adding a touch of warmth to user interactions.
+- Primary colors like white (#ffffff) and light gray (#f8f6fc) create a clean and neutral background.
+- 	Accent colors include:
+-	Pink (#fecddf) for warmth in the logo and background elements.
+- Blue (#3fa5dc) for interactive elements like buttons and links, adding a calming tone.
+- Green (#28dba5) for important actions, bringing energy to key interactions.
+- Dark navy (#1f173d) for strong contrast in text and buttons, ensuring readability.
+
+These choices combine to create a simple, welcoming, and easy-to-navigate interface.
+
+This palette shows my colors
+
+
 
 **Visual Elements**
 
@@ -285,13 +293,21 @@ The visual design of the Rest In Ease application is aimed at creating a calming
 
 - Buttons: Rounded buttons with soft shadows are used for interaction, making it clear where users can engage (e.g., “Post”, “Comment”, “Like”). Favicon-sized icons are integrated into these buttons, adding a visually engaging touch that enhances user interaction and navigability. Favicons are also used for menu selections and options like “Like” and “Comment,” providing intuitive visual cues for user actions.
 - Forms: User-friendly forms with spacious input fields and clear labels. Input validation ensures users receive real-time feedback on any errors.
-- Menus: Dropdown menus for editing or deleting posts and profiles, along with a hamburger navigation for mobile users, provide easy access to various features without cluttering the interface. These streamlined options ensure that users can manage their content efficiently while maintaining a clean, organized layout.
+- Menus: Dropdown menus for editing or deleting posts,comments and editing profiles, along with a hamburger navigation for mobile users, provide easy access to various features without cluttering the interface. These streamlined options ensure that users can manage their content efficiently while maintaining a clean, organized layout.
 
 These design elements are carefully selected to create a peaceful, intuitive, and emotionally engaging environment for users, aligning with the platform’s goal of fostering safe, meaningful emotional expression.
 
 </details>
 
 ## <a id="am-i-responsive">Am I Responsive</a>
+
+Showing of the responsiveness of the website on different devices.
+
+<details>
+<summary>Click to show image</summary>
+
+![Responsive](src/assets/responsive.png)
+</details>
 
 ## <a id="user-stories">User Stories</a>
 <details>
@@ -335,7 +351,7 @@ These design elements are carefully selected to create a peaceful, intuitive, an
 
 ### <a id="future-features">Future Features</a>
 **Important**
-- I initially planned to update the models and handle category, mood, and feeling directly in the backend, allowing for more flexibility and proper storage in the database. Due to time constraints, I had to implement them on the frontend for now. This is a clear future feature that I will address by integrating these fields into the backend models and ensuring a more scalable solution in later iterations.
+- Initially, I intended to manage the category, mood, and feeling fields dynamically from the backend, which would allow for simpler updates by only modifying the models. However, due to time constraints, I implemented these fields both in the backend models and in the frontend. By hardcoding the options in both the frontend and backend, the fields are currently functional but lack flexibility. Moving forward, I plan to streamline this by updating only the backend models, so that any changes will automatically propagate to the frontend, resulting in a more dynamic and scalable solution.
 
 ## <a id="technologies-used">Technologies Used</a>
 
