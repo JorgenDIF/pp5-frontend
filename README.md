@@ -20,7 +20,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [Assignment Requirements](#assignment-requirements)
   - [Self-Assessment](#self-assessment)
 - [Features](#features)
-  - [Gifs](#gifs)
+  - [The Features](#gifs)
   - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
   - [Tools](#tools)
@@ -194,7 +194,7 @@ The skeleton of the Rest In Ease social media app outlines the basic structure a
 - Display the number of followers and following on the user profile page.
 </details>
 
-## The Wireframes can be found here:
+### The Wireframes can be found here:
 
 <details>
 <summary>Sign Up</summary>
@@ -275,7 +275,7 @@ These choices combine to create a simple, welcoming, and easy-to-navigate interf
 
 This palette shows my colors
 
-
+![Palette](src/assets/palette.png)
 
 **Visual Elements**
 
@@ -347,7 +347,228 @@ Showing of the responsiveness of the website on different devices.
 
 ## <a id="features">Features</a>
 
-### <a id="gifs">Gifs</a>
+### <a id="the-features">The Features</a>
+#### Home Page
+When you enter the site, you’re greeted with a list of posts and clear options to Sign In or Sign Up. The page is designed to make you feel welcome and encourage exploration, providing an easy entry point to engage with the app.
+<details>
+<summary>Click to show home image</summary>
+
+  ![Home](src/assets/Features/home1.png)
+
+</details>
+</br>
+
+####  Sign Up Page
+
+This is where you can create an account for the Rest In Ease app.
+<details>
+<summary>Click to show sign up image</summary>
+
+![Sign Up](src/assets/Features/signup.png)
+
+</details>
+</br>
+
+#### Sign In Page
+
+This is where you log in after creating an account. 
+
+<details>
+<summary>Click to show sign in image</summary>
+
+![Sign In](src/assets/Features/signin.png)
+
+</details>
+</br>
+
+#### Home Page Signed In
+This is what the Home Page looks like after signing in.
+
+<details>
+<summary>Click to show signed in homepage image</summary>
+
+![Signed In](src/assets/Features/home-signin.png)
+
+</details>
+</br>
+
+#### Feed
+
+This is the user’s feed where you can see posts from users you follow.
+
+<details>
+<summary>Click to show feed image</summary>
+
+![Feed](src/assets/Features/feed.png)
+
+</details>
+</br>
+
+#### Liked
+Here, the user can view the posts they have liked.
+
+<details>
+<summary>Click to show liked image</summary>
+
+![Liked](src/assets/Features/liked.png)
+
+</details>
+</br>
+
+#### Profile
+
+This is the user’s profile page.
+
+<details>
+<summary>Click to show profile image</summary>
+
+![Profile](src/assets/Features/profile.png)
+
+</details>
+</br>
+
+#### Dropdown Profile
+
+This displays the dropdown menu for the profile.
+
+<details>
+<summary>Click to show profile dropdown image</summary>
+
+![Dropdwon Profile](src/assets/Features/dropdown-profile.png)
+
+</details>
+</br>
+
+#### Edit Profile
+
+This is where the user can edit their profile, update their bio, and change their photo.
+
+<details>
+<summary>Click to show edit profile image</summary>
+
+![Edit Profile](src/assets/Features/edit-profile.png)
+
+</details>
+</br>
+
+##### Create Post
+
+This is where the user can create a post. They are required to select a category and mood. 
+
+<details>
+<summary>Click to show create post image</summary>
+
+![alt text](src/assets/Features/create-post.png)
+
+</details>
+</br>
+
+#### Single Post
+
+This is where you land when you click on one of your posts.
+
+<details>
+<summary>Click to show create single post image</summary>
+
+![Single Post](src/assets/Features/single-post.png)
+
+</details>
+</br>
+
+#### Dropdown Post
+
+This is the dropdown menu for a user’s post, where you can edit or delete it.
+
+<details>
+<summary>Click to show post dropdown image</summary>
+
+![Dropdown Post](src/assets/Features/dropdown-post.png)
+
+</details>
+</br>
+
+#### Edit Post
+
+This is the page where you can edit a post.
+
+<details>
+<summary>Click to show edit post image</summary>
+
+![Edit Post](src/assets/Features/edit-post.png)
+
+</details>
+</br>
+
+#### Create Comment
+
+This is the page where you can create a comment. The user is required to select a feeling.
+
+<details>
+<summary>Click to show create comment image</summary>
+
+![Create Comment](src/assets/Features/create-comment.png)
+
+
+</details>
+</br>
+
+#### Dropdown Comment
+
+This is the dropdown menu for a comment created by the user.
+
+<details>
+<summary>Click to show dropdown comment image</summary>
+
+![Dropdown Comment](src/assets/Features/dropdown-comment.png)
+
+</details>
+</br>
+
+#### Edit Comment
+
+This is the page where you can edit or delete a comment.
+
+<details>
+<summary>Click to show edit comment image</summary>
+
+![Edit Comment](src/assets/Features/edit-comment.png)
+
+</details>
+</br>
+
+#### Most Followed Profiles
+
+Here you can see the most followed profiles
+
+<details>
+<summary>Click to show Popular profiles image</summary>
+
+![Popular profiles](src/assets/Features/most-followed-profies.png)
+
+</details>
+</br>
+
+#### Mobile mode
+
+Two GIFs showing the app in iPhone mode, highlighting its main interface and mobile responsiveness.
+
+<details>
+<summary>Click to show iphone gif-1</summary>
+
+![Gif 1](src/assets/Features/iphone-mode.gif)
+
+</details>
+</br>
+
+<details>
+<summary>Click to show iphone gif-1</summary>
+
+![Gif 1](src/assets/Features/iphone-mode-2.gif)
+
+</details>
+</br>
+
+
 
 ### <a id="future-features">Future Features</a>
 **Important**
