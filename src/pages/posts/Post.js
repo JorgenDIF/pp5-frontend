@@ -9,6 +9,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { moods } from "../../data/mood"; 
+import { categories } from "../../data/category";
 
 const Post = (props) => {
   const {
@@ -78,12 +79,8 @@ const Post = (props) => {
     }
   };
 
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
-
   const moodObject = moods.find((m) => m.value === mood);
+  const categoryObject = categories.find((c) => c.value === category);
 
   return (
     <Card className={styles.Post}>
@@ -113,7 +110,11 @@ const Post = (props) => {
             <strong>Mood:</strong> {moodObject.label}
           </Card.Text>
         )}
-        {category && <Card.Text><strong>Category:</strong> {capitalizeFirstLetter(category)}</Card.Text>}
+        {categoryObject && (
+          <Card.Text>
+            <strong>Category:</strong> {categoryObject.label}
+          </Card.Text>
+        )}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
@@ -140,8 +141,8 @@ const Post = (props) => {
           )}
           {likes_count}
           <Link to={`/posts/${id}`} aria-label="View Comments">
-  <i className="far fa-comments" />
-</Link>
+            <i className="far fa-comments" />
+          </Link>
           {comments_count}
         </div>
       </Card.Body>
