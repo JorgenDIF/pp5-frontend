@@ -19,6 +19,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [Learning Objectives](#learning-objectives)
   - [Assignment Requirements](#assignment-requirements)
   - [Self-Assessment](#self-assessment)
+  - [Reusable Components](#reusable-components)
 - [Features](#features)
   - [The Features](#gifs)
   - [Future Features](#future-features)
@@ -345,9 +346,49 @@ Showing of the responsiveness of the website on different devices.
 
 ### <a id="self-assessment">Self-Assessment</a>
 
+### <a id="reusable-components">Reusable Components</a>
+
+This application features reusable components, which help maintain scalability and efficiency. Below are examples:
+<details>
+<summary>Click to show components</summary>
+
+#### NavBar Component:
+
+- Purpose: Provides navigation across the application, showing sign-in options, user profile 
+  links, and post creation.
+- Reusability: The NavBar is used across all app routes to maintain consistent navigation.
+- Props: Displays dynamic links based on user authentication status.
+
+#### MoreDropdown Component:
+
+- Purpose: Allows users to edit or delete posts/comments.
+- Reusability: Used in post, profile, and comment components to manage user-specific actions.
+- Props: Functions like handleEdit, handleDelete.
+
+#### Avatar Component:
+
+- Purpose: Displays user profile images.
+- Reusability: Used across the app to consistently display user images in posts, comments, and 
+  profiles.
+- Props: src, height, text.
+
+#### Profile Component:
+
+- Purpose: Displays user profile details, including follow/unfollow actions.
+- Reusability: Used on the profile page and in the PopularProfiles component to maintain 
+  consistent display.
+- Props: profile, imageSize, mobile.
+
+</details>
+</br>
+
 ## <a id="features">Features</a>
 
 ### <a id="the-features">The Features</a>
+
+<details>
+<summary>Click to show features</summary>
+
 #### Home Page
 When you enter the site, you’re greeted with a list of posts and clear options to Sign In or Sign Up. The page is designed to make you feel welcome and encourage exploration, providing an easy entry point to engage with the app.
 <details>
@@ -568,7 +609,7 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 </details>
 </br>
 
-
+</details>
 
 ### <a id="future-features">Future Features</a>
 **Important**
