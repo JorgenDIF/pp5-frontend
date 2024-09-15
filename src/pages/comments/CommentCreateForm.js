@@ -10,8 +10,8 @@ import { axiosRes } from "../../api/axiosDefaults";
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-  const [feeling, setFeeling] = useState(""); // Default empty option for feeling
-  const [feelingError, setFeelingError] = useState(""); // Error state for feeling
+  const [feeling, setFeeling] = useState(""); 
+  const [feelingError, setFeelingError] = useState(""); 
 
   const handleChangeContent = (event) => {
     setContent(event.target.value);
@@ -19,7 +19,7 @@ function CommentCreateForm(props) {
 
   const handleChangeFeeling = (event) => {
     setFeeling(event.target.value);
-    setFeelingError(""); // Clear error when the user interacts with the field
+    setFeelingError("");
   };
 
   const handleSubmit = async (event) => {
@@ -50,7 +50,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-      setFeeling(""); // Reset the feeling field to empty after submit
+      setFeeling(""); 
     } catch (err) {
       // console.log(err);
     }
@@ -94,7 +94,7 @@ function CommentCreateForm(props) {
       </Form.Group>
 
       <button
-        className={`${styles.Button} btn d-block ml-auto`}
+        className={`${styles.Button} btn d-block ms-auto`}
         disabled={!content.trim()}
         type="submit"
       >

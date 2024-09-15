@@ -53,7 +53,7 @@ function CommentEditForm(props) {
           <Avatar src={profileImage} />
         </Link>
         <Form.Control
-          className={`${styles.Form} ml-2`}
+          className={`${styles.Form} ms-2`}
           as="textarea"
           value={formContent}
           onChange={handleContentChange}
