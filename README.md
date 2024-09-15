@@ -613,7 +613,7 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 
 ### <a id="future-features">Future Features</a>
 **Important**
-- Initially, I intended to manage the category, mood, and feeling fields dynamically from the backend, which would allow for simpler updates by only modifying the models. However, due to time constraints, I implemented these fields both in the backend models and in the frontend. By hardcoding the options in both the frontend and backend, the fields are currently functional but lack flexibility. Moving forward, I plan to streamline this by updating only the backend models, so that any changes will automatically propagate to the frontend, resulting in a more dynamic and scalable solution.
+- As the project progressed, I initially added fields such as mood, category, and feeling directly to the models in the backend. However, as I worked through the development, I realized that a more dynamic approach—by managing these fields separately as general models—would offer greater flexibility and scalability. This change in thinking came as I started to envision how much easier it would be to update and reuse these fields across different parts of the application without hardcoding them in the frontend. Given the time constraints, I kept the current implementation, but I plan to refactor it in the future to fully support dynamic and reusable fields for moods, categories, and feelings, as part of a more scalable solution. This improvement is part of my future roadmap for the project.
 
 ## <a id="technologies-used">Technologies Used</a>
 
