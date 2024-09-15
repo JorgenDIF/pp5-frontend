@@ -617,8 +617,29 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 
 ## <a id="technologies-used">Technologies Used</a>
 
+<details>
+<summary>Click to show technologies</summary>
+
+1. Axios (v0.24.0): A promise-based HTTP client that facilitates communication between the frontend and backend. Axios simplifies making HTTP requests to the REST API and manages headers automatically. In addition, it supports interceptors, which help handle token refreshing for user authentication, improving the user experience by allowing users to stay logged in without frequent re-authentication.
+2. React Bootstrap (v2.0.0): A frontend framework for React that provides pre-built responsive components. This was chosen to accelerate development by offering an array of customizable components like forms, buttons, and dropdowns, enabling focus on core functionality rather than building components from scratch.
+3. JWT-Decode (v3.1.2): Used to decode JSON Web Tokens (JWT) in the authentication process. This helps maintain secure user sessions by verifying the authenticity of tokens and extracting user information from them.
+4. React (v17.0.2): The core JavaScript library used for building the user interface. React enables the creation of reusable components and handles dynamic updates to the UI efficiently.
+5. React Router (v6.0.2): A routing library that allows for seamless navigation between different pages of the app. It improves the user experience by managing the app’s routes in a declarative and flexible way.
+6. CSS Modules: A method for writing modular, scoped CSS to prevent style conflicts across the application. This ensures that styles are only applied to the component they are meant for, improving maintainability.
+	
+8.	Git & GitHub: Used for version control, tracking changes, and collaborating on the project. GitHub also serves as the repository for storing the codebase.
+
+</details>
+
 ### <a id="languages">Languages</a>
 
+<details>
+<summary>Click to show languages</summary>
+1.	HTML – used for structuring the content of the React components.
+2.	CSS – used for styling the web application.
+3.	JavaScript – the main programming language used with React to build dynamic web applications.
+
+</details>
 ### <a id="tools">Tools</a>
 
 ### <a id="frameworks-and-libraries">Frameworks & Libraries</a>
@@ -626,6 +647,9 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 ### <a id="design">Design</a>
 
 ## <a id="testing">Testing</a>
+
+Manual testing were preformed. The results are shown here
+[Test](TEST.md)
 
 ### <a id="bugs">Bugs</a>
 
