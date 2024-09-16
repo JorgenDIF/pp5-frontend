@@ -27,9 +27,10 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [Tools](#tools)
   - [Languages](#languages)
   - [Frameworks & Libraries](#frameworks-and-libraries)
-  - [Design](#design)
-- [Testing](#testing)
-  - [Bugs](#bugs)
+-  [Testing](#testing)
+   - [Validation](#validation)
+   -[Lighthouse Test](#lighthouse)
+   - [Bugs](#bugs)
 - [Setup and deployment](#setup-and-deployment)
   - [Create Repository](#create-repository)
   - [Intalize in VS Code](#intalize-in-vs-code)
@@ -640,16 +641,71 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 3.	JavaScript – the main programming language used with React to build dynamic web applications.
 
 </details>
+
 ### <a id="tools">Tools</a>
+
+<details>
+<summary>Click to show Tools</summary>
+
+-	GitPod Enterprise: A cloud-based development environment used for coding and testing. I switched from VS Code to GitPod during the project to better utilize Tutor Support.
+-	Git: Used for version control, enabling tracking of changes and collaboration through branches and commits.
+- GitHub: A platform for hosting the project’s Git repositories, also used for managing tasks and issues.
+- ESLint: A tool used for identifying and fixing code quality and syntax errors in JavaScript, ensuring consistent code standards.
+- Lucidchart: Used for creating the Entity-Relationship Diagram (ERD) to visualize the database schema and relationships between models.
+- Balsamiq: Employed to design wireframes, helping plan the layout and user interface before development began.
+- Heroku: A cloud platform used to deploy the application, making it accessible online.
+- Cloudinary: A cloud-based image management service, used for uploading and delivering images efficiently.
+
+</details>
 
 ### <a id="frameworks-and-libraries">Frameworks & Libraries</a>
 
-### <a id="design">Design</a>
+<details>
+<summary>Click to show Frameworks</summary>
+
+- React 17.0.2: The core JavaScript library used for building the user interface of the app, especially for creating reusable components.
+- React Bootstrap 1.6.6: Integrated to provide ready-made UI components following the Bootstrap framework, allowing for responsive and consistent design.
+- React Router 5.3.4: A client-side routing library for React, enabling smooth navigation between pages without reloading.
+- Axios 0.21.1: A promise-based HTTP client used for making requests to the REST API, simplifying data fetching and sending.
+- jwt-decode 3.1.2: A library for decoding JSON Web Tokens (JWT), used for handling authentication tokens in the app.
+- react-infinite-scroll-component: Enables infinite scrolling functionality to load additional content dynamically as the user scrolls through the page.
+
+</details>
+
+
 
 ## <a id="testing">Testing</a>
 
 Manual testing were preformed. The results are shown here
 [Test](TEST.md)
+
+### <a id="validation">Validation</a>
+
+- The React code was validated using ESLint. You can view the results here.
+![ESLint](src/assets/validation/eslint.png)
+
+- The HTML code was validated with https://jigsaw.w3.org/css-validator/.
+
+<details>
+<summary>Click to show HTML validation</summary>
+
+![alt text](src/assets/validation/htmlvalidate.png)
+Note: During the validation of the index.html file, there are some warnings related to the usage of %PUBLIC_URL%. This placeholder is used in React applications created with Create React App (CRA) to correctly reference resources (such as icons and manifests) from the public directory. These warnings do not affect the functionality of the application and are resolved when the app is built for production, as %PUBLIC_URL% is replaced with the correct path.
+
+</details>
+</br>
+
+- The CSS code was validated with https://jigsaw.w3.org/css-validator/#validate_by_input All the results looked like this:
+<details>
+<summary>Click to show CSS validation</summary>
+
+![CSS](src/assets/validation/css.png)
+
+</details>
+
+### <a is="lighthouse">Lighthouse Test</a>
+
+
 
 ### <a id="bugs">Bugs</a>
 
