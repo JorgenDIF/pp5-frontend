@@ -1,6 +1,17 @@
+/*
+ * This form is used to create a new comment on a post. Users can enter a comment,
+ * select their current feeling, and submit the form. The feeling options are imported
+ * from a static file (`feeling.js`) and are used to let users express their emotions 
+ * when commenting.
+ *
+ * Similar to the approach in the post creation form, this solution avoids hardcoding
+ * the feeling options directly in the component, instead sourcing them from a static file.
+ * In the future, the plan is to make this more dynamic by fetching feelings from the backend.
+ */
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { feelings } from "../../data/feeling"; 
+import { feelings } from "../../data/feeling";  // Importing feeling options from a static file
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
@@ -22,6 +33,11 @@ function CommentCreateForm(props) {
     setFeelingError("");
   };
 
+    /*
+   * Handles form submission to create a new comment.
+   * Ensures that a feeling is selected before submitting and updates the state accordingly.
+   * The post and comments are dynamically updated to reflect the new comment.
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
 

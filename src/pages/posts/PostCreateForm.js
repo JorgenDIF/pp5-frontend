@@ -1,6 +1,18 @@
+/*
+ * This form is used to create a new post. It allows users to enter a title,
+ * content, image, and select a mood and category. Currently, the mood and category
+ * options are imported from static files (`mood.js` and `category.js`), which
+ * provide predefined choices.
+ *
+ * Although this solution avoids hardcoding these options directly in the component,
+ * it is a compromise. The long-term plan is to refactor the application to make
+ * these fields dynamic by fetching mood and category options from the backend
+ * to ensure better flexibility and scalability.
+ */
+
 import React, { useRef, useState } from "react";
-import { moods } from "../../data/mood";
-import { categories } from "../../data/category";
+import { moods } from "../../data/mood"; // Importing mood options from a static data file
+import { categories } from "../../data/category"; // Importing category options from a static data file
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -20,30 +32,32 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
-  const [moodError, setMoodError] = useState(""); 
-  const [categoryError, setCategoryError] = useState(""); 
+  const [moodError, setMoodError] = useState("");
+  const [categoryError, setCategoryError] = useState("");
 
+  // Initial post data state
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
-    mood: "",  
-    category: ""  
+    mood: "",
+    category: "",
   });
   const { title, content, image, mood, category } = postData;
 
-  const imageInput = useRef(null);
-  const history = useHistory();
+  const imageInput = useRef(null); // For handling image file input
+  const history = useHistory(); // To navigate programmatically
 
   const handleChange = (event) => {
     setPostData({
       ...postData,
       [event.target.name]: event.target.value,
     });
-    setMoodError(""); 
-    setCategoryError(""); 
+    setMoodError(""); // Clear mood error when the user selects a mood
+    setCategoryError(""); // Clear category error when the user selects a category
   };
 
+  // Updates the image in the state when a file is selected
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -54,9 +68,16 @@ function PostCreateForm() {
     }
   };
 
+  /*
+   * Handles form submission. If the user hasn't selected a mood or category,
+   * it displays an error. Otherwise, the form data is submitted to the backend.
+   * Once the post is successfully created, the user is redirected to the post page.
+   */
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Ensure a mood and category are selected before submitting
     if (!mood) {
       setMoodError("Please choose a mood before submitting!");
       return;
@@ -67,7 +88,7 @@ function PostCreateForm() {
       return;
     }
 
-    const formData = new FormData();
+    const formData = new FormData(); // Prepare form data for submission
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
@@ -76,7 +97,7 @@ function PostCreateForm() {
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      history.push(`/posts/${data.id}`); // Redirect to the created post page
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -84,6 +105,11 @@ function PostCreateForm() {
     }
   };
 
+  /*
+   * Renders the form with inputs for title, content, mood, category, and image.
+   * The mood and category dropdowns are currently populated with static data,
+   * but will be refactored to fetch these options from the backend in the future.
+   */
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -146,17 +172,23 @@ function PostCreateForm() {
           onChange={handleChange}
           isInvalid={!!categoryError}
         >
-          <option value="">--Choose Category--</option> {/* Default empty option */}
+          <option value="">--Choose Category--</option>{" "}
+          {/* Default empty option */}
           {categories.map((categoryOption) => (
             <option key={categoryOption.value} value={categoryOption.value}>
               {categoryOption.label}
             </option>
           ))}
         </Form.Control>
-        {categoryError && <div className="text-danger mt-1">{categoryError}</div>}
+        {categoryError && (
+          <div className="text-danger mt-1">{categoryError}</div>
+        )}
       </Form.Group>
 
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={() => history.goBack()}>
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        onClick={() => history.goBack()}
+      >
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
@@ -169,7 +201,9 @@ function PostCreateForm() {
     <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
+          <Container
+            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+          >
             <Form.Group className="text-center">
               {image ? (
                 <>
@@ -177,14 +211,23 @@ function PostCreateForm() {
                     <Image className={appStyles.Image} src={image} rounded />
                   </figure>
                   <div>
-                    <Form.Label className={`${btnStyles.Button} ${btnStyles.Blue} btn`} htmlFor="image-upload">
+                    <Form.Label
+                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      htmlFor="image-upload"
+                    >
                       Change the image
                     </Form.Label>
                   </div>
                 </>
               ) : (
-                <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
-                  <Asset src={Upload} message="Click or tap to upload an image" />
+                <Form.Label
+                  className="d-flex justify-content-center"
+                  htmlFor="image-upload"
+                >
+                  <Asset
+                    src={Upload}
+                    message="Click or tap to upload an image"
+                  />
                 </Form.Label>
               )}
               <Form.Group controlId="image-upload">

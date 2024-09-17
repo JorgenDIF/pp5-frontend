@@ -1,5 +1,11 @@
+/*
+ * This form allows users to edit their comments. It pre-fills the comment content 
+ * and feeling selected previously. Upon submitting the form, the comment is updated 
+ * in the database, and the component is closed. The list of comments is also updated 
+ * in real time to reflect the changes.
+ */
 import React, { useState } from "react";
-import { feelings } from "../../data/feeling";
+import { feelings } from "../../data/feeling"; // Importing feelings options from static data
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";

@@ -1,3 +1,9 @@
+/*
+ * Fetch and display posts with search and filter functionality.
+ * Implements infinite scrolling for posts and shows a search bar to filter posts.
+ * Displays a loading spinner while fetching data, and handles the case when no results are found.
+ * Includes responsive layout, showing popular profiles on larger screens and mobile.
+ */
 import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";

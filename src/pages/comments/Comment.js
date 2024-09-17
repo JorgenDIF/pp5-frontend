@@ -1,3 +1,9 @@
+/*
+ * This component represents an individual comment within a post.
+ * It includes details such as the comment owner, profile image, timestamp,
+ * content, and a "feeling" associated with the comment. It also allows for 
+ * editing and deleting if the current user is the owner of the comment.
+ */
 import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,7 +16,7 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
-import { feelings } from "../../data/feeling"; 
+import { feelings } from "../../data/feeling"; // Import the list of predefined feelings
 
 const Comment = (props) => {
   const {
@@ -19,7 +25,7 @@ const Comment = (props) => {
     owner,
     updated_at,
     content,
-    feeling,
+    feeling,// The "feeling" associated with the comment
     id,
     setPost,
     setComments,
@@ -50,11 +56,23 @@ const Comment = (props) => {
     }
   };
 
+    /*
+   * Fetch the label (user-friendly name) for the 'feeling' field.
+   * This is a temporary solution using a static list of feelings.
+   * In the future, this could be refactored to be dynamic by integrating
+   * feelings from the backend, allowing for more flexibility.
+   */
   const getFeelingLabel = (feeling) => {
     const foundFeeling = feelings.find((item) => item.value === feeling);
     return foundFeeling ? foundFeeling.label : feeling;
   };
 
+  /*
+ * Render the comment component, showing the comment's content, 
+ * the associated feeling (which is mandatory), and options for editing/deleting 
+ * if the current user is the comment owner.
+ * The "feeling" associated with each comment must be selected by the user before submission.
+ */
   return (
     <div>
       <hr />

@@ -1,3 +1,9 @@
+/*
+ * This component represents an individual post in the application.
+ * It includes details such as the post owner, profile image, title,
+ * content, mood, category, and like/comment counts. The component
+ * integrates with the CurrentUserContext to determine the current user's details.
+ */
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -8,10 +14,13 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+
+// Import mood and category data
 import { moods } from "../../data/mood"; 
 import { categories } from "../../data/category";
 
 const Post = (props) => {
+   // Destructuring props to extract post details
   const {
     id,
     owner,
@@ -24,20 +33,23 @@ const Post = (props) => {
     content,
     image,
     updated_at,
-    mood, 
-    category, 
+    mood, // The mood selected for the post
+    category,  // The category selected for the post
     postPage,
     setPosts,
   } = props;
 
+  // Access the current user information from the context
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
+  const is_owner = currentUser?.username === owner; // Check if the current user owns the post
   const history = useHistory();
 
+   // Handle editing the post if the user owns it
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Handle deleting the post if the user owns it
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
@@ -47,6 +59,7 @@ const Post = (props) => {
     }
   };
 
+  // Handle liking the post
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -63,6 +76,7 @@ const Post = (props) => {
     }
   };
 
+  // Handle unliking the post
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -79,8 +93,28 @@ const Post = (props) => {
     }
   };
 
+   /*
+   * To avoid hardcoding the mood and category labels directly into this component,
+   * I decided to retrieve these values from separate data files (`mood.js` and `category.js`).
+   * This solution is a compromise, allowing for flexibility without hardcoding,
+   * and helps reduce code repetition throughout the project.
+   *
+   * The current implementation fetches the mood and category labels from static arrays,
+   * using the `find()` method to match the value from the post data with the correct label.
+   * Although this approach works for now, I plan to make this more dynamic in the future
+   * by integrating mood and category models directly into the backend, allowing for easier
+   * scalability and dynamic updates without needing to modify the frontend.
+   * This will be part of the future improvements to the project.
+   */
+
   const moodObject = moods.find((m) => m.value === mood);
   const categoryObject = categories.find((c) => c.value === category);
+
+    /*
+   * Renders the post card with profile details, post image, title, content,
+   * mood, category, and interactive like/comment buttons. Handles different states
+   * based on whether the current user is the post owner or a visitor.
+   */
 
   return (
     <Card className={styles.Post}>
