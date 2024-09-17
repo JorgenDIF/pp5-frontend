@@ -33,9 +33,8 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
    - [Bugs](#bugs)
 - [Setup and deployment](#setup-and-deployment)
   - [Create Repository](#create-repository)
-  - [Intalize in VS Code](#intalize-in-vs-code)
-  - [Create React App](#create-react-app)
-  - [Deployment](#deployment)
+  - [Version Control](#version-control)
+  - [Deployment to Heroku](#deployment)
 - [Documentation](#documentation)
   - [Project documentation](#project-documentation)
 - [Credits](#credits)
@@ -705,21 +704,129 @@ Note: During the validation of the index.html file, there are some warnings rela
 
 ### <a is="lighthouse">Lighthouse Test</a>
 
+Lighthouse test was made for a number of pages with the following results:
+<details>
+<summary>Click to show Home Lighthouse test</summary>
 
+![Home](src/assets/lighthouse/home-lighthouse.png)
 
+</details>
+<details>
+<summary>Click to show Sign Up Lighthouse test</summary>
 
+![Sign Up](src/assets/lighthouse/sign-up-lighthouse.png)
+</details>
+
+<details>
+<summary>Click to show Sign In Lighthouse test</summary>
+
+![Sign In](src/assets/lighthouse/login-lighthouse.png)
+</details>
+<details>
+<summary>Click to show Create a Post Lighthouse test</summary>
+
+![Create a Post](src/assets/lighthouse/create-post-lighthouse.png)
+</details>
+<details>
+<summary>Click to show Profile Lighthouse test</summary>
+
+![Profile](src/assets/lighthouse/profile-lighthouse.png)
+</details>
 
 ### <a id="bugs">Bugs</a>
+
+The bugs are shown in the [Kanban](https://github.com/users/JorgenDIF/projects/7) board 
 
 ## <a id="setup-and-deployment">Setup and Deployment</a>
 
 ### <a id="create-repository">Create Repository</a>
 
-### <a id="intalize-in-vs-code">Initialize in VS Code</a>
 
-### <a id="create-react-app">Create React App</a>
+Step-by-step guide on creating a new repository from the Gitpod Full Template by Code Institute.
+<details>
+<summary>Click to expand</summary>
 
-### <a id="deployment">Deployment</a>
+**Log in to GitHub:**
+1. Open your web browser and navigate to GitHub.
+2. If you are not already logged in, enter your GitHub username and password to log in.
+
+**Access the Gitpod Full Template:**
+1. Go directly to the Gitpod Full Template repository.
+
+**Create a New Repository Using the Template:**
+1. On the template repository page, look for the green button that says "Use this template". Click on this button.
+2. You will be redirected to the "Create a new repository from gitpod-full-template" page.
+
+**Configure Your New Repository:**
+1. Repository name: Enter a name for your new repository.
+2. Repository description (optional): Provide a brief description of your repository.
+3. Privacy settings: Choose whether the repository should be Public (anyone can see this repository) or Private (you choose who can see this repository).
+4. Leave the "Include all branches" checkbox unchecked if you just need the main branch; check it if you need all branches from the template.
+
+**Create the Repository from the Template:**
+1. Click the "Create repository from template" button to create your new repository with the contents of the Gitpod Full Template.
+
+**Access Your New Repository:**
+1. Once the repository is created, you will be redirected to your new repository page on GitHub.
+</details>
+
+### <a id="version-control">Initialize in VS Code</a>
+<details>
+<summary>Version Control</summary>
+<br>
+The site was created using the Gitpod editor and pushed to github to the remote repository ‘pixavibe-frontend’.
+The following git commands were used throughout development to push code to the remote repo:
+
+- `git add <file>` - This command was used to add the file(s) to the staging area before they are committed.
+- `git commit -m “commit message”` - This command was used to commit changes to the local repository queue ready for the final step.
+- `git push` - This command was used to push all committed code to the remote repository on github.
+</details>
+
+### <a id="deployment">Deployment to Heroku</a>
+
+<details>
+ <summary>To deploy the project to Heroku</summary>
+ 
+ <br>
+
+**Preparing the Application**
+
+- Create and add the 'Procfile' to your application's root directory `echo web: node index.js > Procfile`. Heroku relies on this file to determine how to run your application, ensuring the correct setup of your web server. Use commands like web: `gunicorn PROJ_NAME.wsgi` in the 'Procfile' to instruct Heroku on starting your web server with Gunicorn
+- Ensure you have a requirements.txt file listing all project dependencies.
+- Set up necessary configuration variables in Heroku setting tab > Config Vars (eg. SECRET_KEY, DATABASE_URL, etc.).
+- In your app's 'settings.py' add Heroku to ALLOWED_HOSTS
+
+**Initial set-up**
+
+- Sign up for a [Heroku](https://heroku.com/) account at Heroku's website.
+- Download and install the Heroku Command Line Interface (CLI) to interact with Heroku from your local machine.
+- Or use Heroku Web interface.
+
+**Create Heroku App**
+
+- Sign in or sign up to [Heroku](https://heroku.com/).
+- Click the button that says "Create new app."
+- Enter a unique app name.
+- Choose your region from the dropdown menu.
+- Click the "Create app" button.
+- Scroll further down on the page, select Add Buildpack. The buildpacks will install further dependencies that are not included in the 'requirements.txt'. <br>
+  It's crucial to arrange the build packs correctly! First, choose Python and then Node.js. If they're not in this sequence, you can reorder them by dragging.
+
+**Deployment**
+
+- Deploy by either push your code to Heroku or by connecting your GitHub repository to Heroku or using the Heroku CLI to deploy your application.
+- (if applicable) Run database migrations using the Heroku CLI.
+- For deploying this project, we're using GitHub as our method. After choosing GitHub, make sure to confirm the connection. Then, search for your repository name and once Heroku finds your repository - click "connect"
+- Scroll down to the section "Automatic Deploys".
+- Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy.
+- Click "Deploy branch" wait for the app to be built. Once this is done, a message should appear letting us know that the app was successfully deployed.
+- Click the button "View" to see the app.
+
+**Final Steps**
+
+- Enable the Web Dyno, make sure the web dyno is up and running after deployment.
+- Open your application from the Heroku dashboard or using the CLI command heroku open.
+</details>
 
 ## <a id="credits">Credits</a>
 
