@@ -30,6 +30,8 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
 -  [Testing](#testing)
    - [Validation](#validation)
    - [Lighthouse Test](#lighthouse)
+   - [Browser Test](#browser-test)
+   - [Wave](#wave)
    - [Bugs](#bugs)
 - [Setup and deployment](#setup-and-deployment)
   - [Create Repository](#create-repository)
@@ -731,6 +733,27 @@ Lighthouse test was made for a number of pages with the following results:
 <summary>Click to show Profile Lighthouse test</summary>
 
 ![Profile](src/assets/lighthouse/profile-lighthouse.png)
+</details>
+
+### <a id="browser-test"> Browser Test </a>
+
+I tested the application on following browsers:
+| **Browser**        | **Operating System** | **Result**         |
+|--------------------|----------------------|--------------------|
+| Google Chrome      | macOS Sonoma         | Passed             |
+| Mozilla Firefox    | Windows 10           | Passed             |
+| Microsoft Edge     | Windows 10           | Passed with minor UI variation |
+| Safari             | macOS Sonoma         | Passed             |
+| Opera              | Windows 10           | Passed             |
+
+### <a id="wave">Wave</a>
+ I tested the home page with wave. This is the result:
+ 
+ <details>
+<summary>Click to show Wave</summary>
+
+ ![Wave](src/assets/wave.png)
+
 </details>
 
 ### <a id="bugs">Bugs</a>
