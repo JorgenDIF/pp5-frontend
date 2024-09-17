@@ -29,7 +29,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [Frameworks & Libraries](#frameworks-and-libraries)
 -  [Testing](#testing)
    - [Validation](#validation)
-   -[Lighthouse Test](#lighthouse)
+   - [Lighthouse Test](#lighthouse)
    - [Bugs](#bugs)
 - [Setup and deployment](#setup-and-deployment)
   - [Create Repository](#create-repository)
@@ -702,7 +702,7 @@ Note: During the validation of the index.html file, there are some warnings rela
 
 </details>
 
-### <a is="lighthouse">Lighthouse Test</a>
+### <a id="lighthouse">Lighthouse Test</a>
 
 Lighthouse test was made for a number of pages with the following results:
 <details>
@@ -832,6 +832,22 @@ The following git commands were used throughout development to push code to the 
 
 ### <a id="content">Content</a>
 
-### <a id="media">Media</a>
+- This project was primarily developed by following the Moments Walkthrough project from Code Instiute.
+
+- Inspiration and learning about React came primarily from [Net Ninja](https://www.youtube.com/watch?v=j942wKiXFu8)
+
+- This Tutorial taught me about Postman testing [Postman](https://www.youtube.com/watch?v=cGn_LTFCif0&list=PLhW3qG5bs-L9P22XSnRe4suiWL4acXG-g)
+
+- This tutorial showed me more about Django Rest Framework [Django REST Framework](https://www.youtube.com/watch?v=zpz5OeNKUug&list=PLx-q4INfd95FWHy9M3Gt6NkUGR2R2yqT8)
+
+- [React](https://react.dev/learn) Also learned alot from here
+- [Django Rest framework](https://www.django-rest-framework.org/) Learned alot from here
+- Bootstrap was used across the project [Bootstrap documentation](https://getbootstrap.com/).
+- The logo was made using [Loka](https://looka.com/?_gl=1*14hkpy7*_up*MQ..&gclid=CjwKCAjw0aS3BhA3EiwAKaD2ZWQZ81yQ06iOQvnWnFO9dGcVdTFZIEqbcKCQxvXftfePKWk0ifJcWxoC1ogQAvD_BwE)
+- I referred to the README structure and documentation from the [Pixavibe Project](https://github.com/JaqiKal/pixavibe-frontend/blob/main/README.md) as an excellent example of clear, detailed project documentation, and it served as inspiration for formatting my own.
 
 ### <a id="thank-you">Thank You</a>
+
+- A Big thank you to my mentor Dich Vlaanderen for the support and help along the way
+- My wife and family for the love and support
+- The slack community and mainly the Swedish Channel. Truly special
