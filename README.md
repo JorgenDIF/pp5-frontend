@@ -821,6 +821,7 @@ I tested the application on following browsers:
 | Microsoft Edge     | Windows 10           | Passed with minor UI variation |
 | Safari             | macOS Sonoma         | Passed             |
 | Opera              | Windows 10           | Passed             |
+| Safari             | iOS 17               | Passed             |
 
 ### <a id="wave">Wave</a>
  I tested the home page with wave. This is the result:
