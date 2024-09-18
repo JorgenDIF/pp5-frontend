@@ -664,6 +664,35 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 **Important**
 - As the project progressed, I initially added fields such as mood, category, and feeling directly to the models in the backend. However, as I worked through the development, I realized that a more dynamic approach—by managing these fields separately as general models—would offer greater flexibility and scalability. This change in thinking came as I started to envision how much easier it would be to update and reuse these fields across different parts of the application without hardcoding them in the frontend. Given the time constraints, I kept the current implementation, but I plan to refactor it in the future to fully support dynamic and reusable fields for moods, categories, and feelings, as part of a more scalable solution. This improvement is part of my future roadmap for the project.
 
+**More Future Feauters**
+<details>
+<summary>Click to show more Future Features</summary>
+
+1.	Direct Messaging:
+     - Allow users to send and receive private messages between one another. This feature would include:
+    - A messaging interface for users to manage conversations.
+    -	Notifications for new messages.
+    - The ability to block users from sending messages.
+2.	Notifications System:
+    - Implement a notification system to inform users about various activities such as:
+    - New followers.
+    - Comments on their posts.
+    - Likes on their posts.
+    -	Mentions in posts or comments.
+    - Direct messages.
+3.	Set Mood in Profile:
+    - Add the ability for users to set their current mood on their profile.
+    - This mood would be displayed publicly, reflecting their emotional state.
+    - Users can change their mood at any time and see a history of previous moods.
+4.	Add Video Support:
+    - Allow users to upload and share videos in their posts, alongside or instead of images.
+    - This would include:
+    - Support for common video formats (e.g., MP4, AVI).
+    - A video player interface embedded in posts for easy playback.
+    - Options to set thumbnails for video posts.
+
+</details>
+
 ## <a id="technologies-used">Technologies Used</a>
 
 <details>
