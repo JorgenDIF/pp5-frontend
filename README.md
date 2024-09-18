@@ -386,6 +386,7 @@ Self-Assessment
 This section provides an evaluation of the project development process, including challenges faced, lessons learned, and areas for improvement.
 <details>
 <summary>Click to show Self-Assessment </summary>
+
 1.	Learning Reflection: This project has greatly enhanced my understanding of full-stack development, particularly with React on the frontend and Django REST Framework on the backend. Implementing the API and integrating it with the React components was a rewarding challenge.
 - Highlights: One of the most valuable lessons was learning how to structure a React application with reusable components, especially in handling forms and API integration. This allowed me to build a more modular and scalable frontend. Moreover, the authentication process using Django REST Framework gave me hands-on experience with securing an application.
 - Challenges: The most significant challenge was managing state in React, particularly when dealing with complex forms (e.g., post creation with mood and category fields). Additionally, configuring and securing API endpoints to ensure proper data validation required additional focus.
@@ -683,6 +684,7 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 
 <details>
 <summary>Click to show languages</summary>
+
 1.	HTML – used for structuring the content of the React components.
 2.	CSS – used for styling the web application.
 3.	JavaScript – the main programming language used with React to build dynamic web applications.
@@ -698,7 +700,6 @@ Two GIFs showing the app in iPhone mode, highlighting its main interface and mob
 -	Git: Used for version control, enabling tracking of changes and collaboration through branches and commits.
 - GitHub: A platform for hosting the project’s Git repositories, also used for managing tasks and issues.
 - ESLint: A tool used for identifying and fixing code quality and syntax errors in JavaScript, ensuring consistent code standards.
-- Lucidchart: Used for creating the Entity-Relationship Diagram (ERD) to visualize the database schema and relationships between models.
 - Balsamiq: Employed to design wireframes, helping plan the layout and user interface before development began.
 - Heroku: A cloud platform used to deploy the application, making it accessible online.
 - Cloudinary: A cloud-based image management service, used for uploading and delivering images efficiently.
