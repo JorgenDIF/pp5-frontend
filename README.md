@@ -349,6 +349,7 @@ Learning Objectives
 This project focuses on achieving the following learning and development goals:
 <details>
 <summary>Click to show Learning objectives</summary>
+
 1.	Mastery of Full-Stack Development: Build a solid foundation in both frontend (React, Bootstrap) and backend (Django REST Framework) technologies, ensuring seamless interaction between client and server-side functionalities.
 2.	Proficiency in API Consumption: Learn to effectively consume and integrate APIs in the frontend, leveraging React for dynamic user interactions.
 3.	Responsive Web Design: Ensure the application adjusts to different device screen sizes using Bootstrap, providing a smooth user experience across all platforms.
@@ -368,6 +369,7 @@ Assignment Requirements
 A breakdown of the essential requirements for the project, as outlined by the educational curriculum:
 <details>
 <summary>Click to show Assignment Requirements </summary>
+
 1.	Full-Stack Web Application: Develop a functional web application that allows users to create, edit, and interact with posts, including likes, comments, and followers.
 2.	User Authentication: Implement secure user authentication using Django REST Framework and React, allowing users to register, sign in, and manage their profiles.
 3.	API-Driven Development: Build a comprehensive REST API for posts, comments, followers, and profile management, ensuring proper CRUD functionality and data validation.
@@ -388,10 +390,10 @@ This section provides an evaluation of the project development process, includin
 <summary>Click to show Self-Assessment </summary>
 
 1.	Learning Reflection: This project has greatly enhanced my understanding of full-stack development, particularly with React on the frontend and Django REST Framework on the backend. Implementing the API and integrating it with the React components was a rewarding challenge.
-- Highlights: One of the most valuable lessons was learning how to structure a React application with reusable components, especially in handling forms and API integration. This allowed me to build a more modular and scalable frontend. Moreover, the authentication process using Django REST Framework gave me hands-on experience with securing an application.
-- Challenges: The most significant challenge was managing state in React, particularly when dealing with complex forms (e.g., post creation with mood and category fields). Additionally, configuring and securing API endpoints to ensure proper data validation required additional focus.
-- Achievements: Successfully deploying the full application, with both frontend and backend seamlessly connected via the API, stands out as a major achievement. Implementing dynamic forms and secure user authentication added depth to the project.
-	2.	Areas for Improvement: While I have made progress, there are areas for improvement, especially in optimizing API performance and managing complex state in React. Future enhancements could include implementing real-time updates with WebSockets for features like comments and likes, and refactoring the hardcoded mood and category data into a more flexible backend-driven solution.
+    - Highlights: One of the most valuable lessons was learning how to structure a React application with reusable components, especially in handling forms and API integration. This allowed me to build a more modular and scalable frontend. Moreover, the authentication process using Django REST Framework gave me hands-on experience with securing an application.
+    - Challenges: The most significant challenge was managing state in React, particularly when dealing with complex forms (e.g., post creation with mood and category fields). Additionally, configuring and securing API endpoints to ensure proper data validation required additional focus.
+    - Achievements: Successfully deploying the full application, with both frontend and backend seamlessly connected via the API, stands out as a major achievement. Implementing dynamic forms and secure user authentication added depth to the project.
+2.	Areas for Improvement: While I have made progress, there are areas for improvement, especially in optimizing API performance and managing complex state in React. Future enhancements could include implementing real-time updates with WebSockets for features like comments and likes, and refactoring the hardcoded mood and category data into a more flexible backend-driven solution.
 
 </details>
 
