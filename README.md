@@ -1,6 +1,6 @@
 ![alt text](src/assets/restlog.png)
 
-Welcome to Rest in Ease, your safe space on social media. Here, you can share your favorite safe spots and express how you’re feeling at any moment. Sometimes, simply sharing how you feel can make a big difference. At Rest in Ease, no one will judge you—this is a community built on understanding and support. Whether you’re looking for a place to vent, seek comfort, or connect with others who understand, Rest in Ease is here for you. Join us and find solace in knowing that you’re not alone. The site is live here [RestInEase](https://rest-in-ease-b95ec6911ae6.herokuapp.com/)
+The Rest in Ease project welcomes users to share their safe spaces and express how they’re feeling at any given moment. This platform is built on understanding and support, with the aim of creating a judgment-free zone where users can connect with others. Whether it’s to vent, seek comfort, or simply share an experience, Rest in Ease offers a sense of community. You can visit the live site here: [RestInEase](https://rest-in-ease-b95ec6911ae6.herokuapp.com/)
 
 ## <a id="table-of-content">Table of Content</a>
 
@@ -974,7 +974,7 @@ You can read extensively on how to clone or fork a repository [here](https://doc
 - [Django Rest framework](https://www.django-rest-framework.org/) Learned alot from here
 - Bootstrap was used across the project [Bootstrap documentation](https://getbootstrap.com/).
 - The logo was made using [Loka](https://looka.com/?_gl=1*14hkpy7*_up*MQ..&gclid=CjwKCAjw0aS3BhA3EiwAKaD2ZWQZ81yQ06iOQvnWnFO9dGcVdTFZIEqbcKCQxvXftfePKWk0ifJcWxoC1ogQAvD_BwE)
-- I referred to the README structure and documentation from the [Pixavibe Project](https://github.com/JaqiKal/pixavibe-frontend/blob/main/README.md) as an excellent example of clear, detailed project documentation, and it served as inspiration for formatting my own.
+- I referred to the README structure and documentation from the [Pixavibe Project](https://github.com/JaqiKal/pixavibe-frontend/blob/main/README.md) as an excellent example of clear, detailed project documentation, and it served as inspiration for formatting my own. Additionally, I borrowed some sections related to deployment from that README.
 
 - For translation from swedish to english I somtetimes used Chat GPT from OpenAI
 
