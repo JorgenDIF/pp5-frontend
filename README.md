@@ -2,7 +2,8 @@
 
 Welcome to Rest in Ease, your safe space on social media. Here, you can share your favorite safe spots and express how you’re feeling at any moment. Sometimes, simply sharing how you feel can make a big difference. At Rest in Ease, no one will judge you—this is a community built on understanding and support. Whether you’re looking for a place to vent, seek comfort, or connect with others who understand, Rest in Ease is here for you. Join us and find solace in knowing that you’re not alone. The site is live here [RestInEase](https://rest-in-ease-b95ec6911ae6.herokuapp.com/)
 
-## Table of Contents
+## <a id="table-of-content">Table of Content</a>
+
 
 - [Introduction](#introduction)
 - [Agile Methodology](#agile-methodology)
@@ -37,6 +38,7 @@ Welcome to Rest in Ease, your safe space on social media. Here, you can share yo
   - [Create Repository](#create-repository)
   - [Version Control](#version-control)
   - [Deployment to Heroku](#deployment)
+  - [Clone and Fork](#clone-and-fork)
 - [Documentation](#documentation)
   - [Project documentation](#project-documentation)
 - [Credits](#credits)
@@ -930,13 +932,39 @@ The following git commands were used throughout development to push code to the 
 - Open your application from the Heroku dashboard or using the CLI command heroku open.
 </details>
 
+### <a id="clone-and-fork">Clone and Fork</a>
+
+<details>
+ <summary>To clone and fork on Github</summary>
+
+* How to clone a repository on GitHub:(Source: GitHub)
+1. Navigate to GitHub
+2. In the dropdown menu, choose "clone repository".
+3. Click the tab that corresponds to the location of the repository you want to clone. You can also click URL to manually enter the repository location.
+4. From the list of repositories, click the repository you want to clone.
+5. To select the local directory into which you want to clone the repository, next to the "Local Path" field, click "Choose", and navigate to the directory.
+6. At the bottom of the "Clone a Repository" window, click Clone.
+* How to fork a repository on GitHub:
+1. At the bottom of the "Clone a Repository" window, click Clone.
+2. Click the tab that corresponds to the location of the repository you want to clone. You can also click URL to manually enter the repository location.
+3. From the list of repositories, click the repository you want to clone.
+4. To select the local directory into which you want to clone the repository, next to the "Local Path" field, click Choose... and navigate to the directory.
+5. At the bottom of the "Clone a Repository" window, click Clone.
+6. Read the information in the "How are you planning to use this fork?" window.
+If you plan to use this fork for contributing to the original upstream repository, click To contribute to the parent project.
+If you plan to use this fork for a project not connected to the upstream, click For my own purposes.
+7. Click Continue.
+You can read extensively on how to clone or fork a repository [here](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
+
+</details>
+
 ## <a id="credits">Credits</a>
 
 ### <a id="content">Content</a>
 
 - This project was primarily developed by following the Moments Walkthrough project from Code Instiute.
 
-- Inspiration and learning about React came primarily from [Net Ninja](https://www.youtube.com/watch?v=j942wKiXFu8)
+- Inspiration and learning about React also came from [Net Ninja](https://www.youtube.com/watch?v=j942wKiXFu8)
 
 - This Tutorial taught me about Postman testing [Postman](https://www.youtube.com/watch?v=cGn_LTFCif0&list=PLhW3qG5bs-L9P22XSnRe4suiWL4acXG-g)
 
@@ -948,8 +976,13 @@ The following git commands were used throughout development to push code to the 
 - The logo was made using [Loka](https://looka.com/?_gl=1*14hkpy7*_up*MQ..&gclid=CjwKCAjw0aS3BhA3EiwAKaD2ZWQZ81yQ06iOQvnWnFO9dGcVdTFZIEqbcKCQxvXftfePKWk0ifJcWxoC1ogQAvD_BwE)
 - I referred to the README structure and documentation from the [Pixavibe Project](https://github.com/JaqiKal/pixavibe-frontend/blob/main/README.md) as an excellent example of clear, detailed project documentation, and it served as inspiration for formatting my own.
 
+- For translation from swedish to english I somtetimes used Chat GPT from OpenAI
+
 ### <a id="thank-you">Thank You</a>
 
 - A Big thank you to my mentor Dick Vlaanderen for the support and help along the way
 - My wife and family for the love and support
 - The slack community and mainly the Swedish Channel. Truly special
+- Tutor Support at Code Institute for amazing help and support
+
+## [Back to Table of Content](#table-of-content)
