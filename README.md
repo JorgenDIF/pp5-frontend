@@ -950,6 +950,6 @@ The following git commands were used throughout development to push code to the 
 
 ### <a id="thank-you">Thank You</a>
 
-- A Big thank you to my mentor Dich Vlaanderen for the support and help along the way
+- A Big thank you to my mentor Dick Vlaanderen for the support and help along the way
 - My wife and family for the love and support
 - The slack community and mainly the Swedish Channel. Truly special
